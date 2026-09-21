@@ -18,7 +18,7 @@ cps/
 ├── index.html              ← ΑΡΧΙΚΗ: μόνο hero + επερχόμενα έργα
 ├── company.html            ← Η Επιχείρηση (+ statement + KPI)
 ├── services.html           ← Υπηρεσίες (+ CTA)
-├── contact.html            ← Επικοινωνία (+ newsletter)
+├── contact.html            ← Επικοινωνία (στοιχεία + φόρμα)
 ├── project.html            ← σελίδα έργου  →  project.html?p=<slug>
 ├── carousel/               ← ⭐ φωτογραφίες του hero carousel (01.jpg, 02.jpg …)
 ├── projects/               ← ⭐ ΕΝΑΣ ΦΑΚΕΛΟΣ ΑΝΑ ΕΡΓΟ
@@ -63,7 +63,7 @@ cps/
 | **index.html** | **Μόνο** hero (full-screen carousel φωτογραφιών) και **Επερχόμενα έργα** (φίλτρα + grid + λίστα) |
 | **company.html** | Η Επιχείρηση: statement («ΤΟ ΑΡΤΙΟ»), KPI, κείμενο εταιρίας + 6 παράγοντες |
 | **services.html** | Οι 3 υπηρεσίες + CTA προς επικοινωνία |
-| **contact.html** | Στοιχεία επικοινωνίας, φόρμα, newsletter |
+| **contact.html** | Στοιχεία επικοινωνίας (διεύθυνση + ΤΚ, τηλ., ωράριο), φόρμα |
 | **project.html** | Σελίδα έργου (`?p=<slug>`): βασική εικόνα, στοιχεία, φωτογραφίες + lightbox, prev/next |
 
 Το **nav** και το **footer** είναι ίδια σε όλες τις σελίδες:
@@ -191,13 +191,16 @@ Overlay με **λευκό φόντο + τα δύο λόγκο (C.P.S wordmark **
 
 ```js
 const FORM = {
-  provider: 'formsubmit',   // 'formsubmit' | 'web3forms' | 'formspree'
+  provider: 'web3forms',    // 'web3forms' | 'formsubmit' | 'formspree'
   to: 'cps.redea@gmail.com',
   key: ''                   // web3forms: access key · formspree: form id
 };
 ```
 
-- **`formsubmit` (προεπιλογή)** — ΔΩΡΕΑΝ, **χωρίς εγγραφή**; μόνο το `to` email.
+- **`web3forms` (προεπιλογή τώρα)** — access key στο `key:` (είναι **δημόσιο** by design,
+  client-side). Δωρεάν **250 submissions/μήνα**, χωρίς λογαριασμό. Το `to` δεν χρησιμοποιείται
+  (το email προορισμού το ορίζει το key στο web3forms.com).
+- **`formsubmit`** — ΔΩΡΕΑΝ, **χωρίς εγγραφή**; μόνο το `to` email.
   («Setup is easy and free» — δεν υπάρχει paid πλάνο στο formsubmit.co· μόνο anti-spam/
   rate limits. ⚠️ Μη μπερδεύεις με `formsubmit.cc` / `formsubmit.site` που είναι **άλλες**,
   χρεούμενες υπηρεσίες με ίδιο όνομα.)
@@ -214,7 +217,7 @@ const FORM = {
 → *απλό* request, **χωρίς CORS preflight** (δουλεύει σε κάθε static host). Η επιτυχία
 κρίνεται από το `okJSON()`: web3forms `success:true`, formsubmit `success:"true"`
 (αλφαριθμητικό!), formspree `ok:true` / `error`. Αν αποτύχει → μήνυμα + `mailto:`.
-Το ίδιο config τροφοδοτεί και τη **Newsletter**. Αν `key`/`to` λείπουν, η φόρμα
+Αν `key`/`to` λείπουν, η φόρμα
 λειτουργεί όπως παλιά (μόνο `mailto:`).
 
 ## SEO (όπως στο newfoundland project)
@@ -250,16 +253,16 @@ const FORM = {
 
 ## Τι μένει να συμπληρωθεί
 
-- [x] **Διεύθυνση / τηλέφωνο** — ✅ Κουμουνδούρου Αλέξανδρου 24, Άγιος Νικόλαος, Λάρισα · **2410 538740**
+- [x] **Διεύθυνση / τηλέφωνο** — ✅ Κουμουνδούρου Αλέξανδρου 24, Άγιος Νικόλαος, **412 22** Λάρισα · **2410 538740**
+      (ο ΤΚ 41222 μπήκε και στο `postalCode` του JSON-LD)
 - [x] **Email** — ✅ `cps.redea@gmail.com` (στοιχεία, footer, `mailto:` φόρμας)
 - [ ] **Facebook / Instagram links** — τα εικονίδια μπήκαν τέρμα δεξιά στο nav, ΑΛΛΑ με `href="#"`
       (σχόλιο `▼▼ ΒΑΛΕ ΕΔΩ ΤΑ ΠΡΑΓΜΑΤΙΚΑ LINKS ▼▼` μέσα στο `.social` σε κάθε σελίδα)
 - [ ] **Γ.Ε.ΜΗ.** — placeholder `000000000000` στο footer
-- [ ] **Ωράριο** — κρατήθηκε «Δευ – Παρ · 09:00 – 17:00» (δεν μου δόθηκε — πες μου το σωστό)
+- [x] **Ωράριο** — ✅ Δευ/Τετ/Παρ 09:00–14:00 & 18:00–21:00 · Τρι/Πεμ 09:00–14:00 (site + JSON-LD)
 - [ ] **Πραγματικά έργα** — αντικατάσταση των `assets/works/*.jpg` με φωτογραφίες
       (ίδια ονόματα = μηδέν αλλαγές στον κώδικα) και ενημέρωση του `PROJECTS`
-- [ ] **Φόρμα επικοινωνίας** — ✅ δουλεύει με `formsubmit` (χωρίς key) · θέλει **1 κλικ**
-      στην ενεργοποίηση του πρώτου email που θα έρθει στο `cps.redea@gmail.com`
+- [x] **Φόρμα επικοινωνίας** — ✅ δουλεύει με **web3forms** (access key) · το newsletter **αφαιρέθηκε**
 - [ ] Αγγλική έκδοση (αν χρειαστεί)
 
 ## Τοπικό preview

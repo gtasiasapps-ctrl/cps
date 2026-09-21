@@ -127,9 +127,9 @@ function setLang(l){
    ══════════════════════════════════════════════════════════ */
 const CONTACT_EMAIL = 'cps.redea@gmail.com';
 const FORM = {
-  provider: 'formsubmit',      // 'formsubmit' (χωρίς key) | 'web3forms' | 'formspree'
-  to: CONTACT_EMAIL,           // πού πάνε τα email
-  key: ''                      // web3forms: access key · formspree: form id
+  provider: 'web3forms',       // 'web3forms' (access key) | 'formsubmit' (χωρίς key) | 'formspree' (form id)
+  to: CONTACT_EMAIL,           // (χρησιμοποιείται μόνο από τον provider 'formsubmit')
+  key: '16876d94-9263-47be-bb3f-5f9882f292ca'               // ← web3forms access key
 };
 const formReady = () => FORM.provider === 'formsubmit'
   ? !!FORM.to
@@ -350,30 +350,6 @@ let renderProjects = function(){};
     });
   }
 
-  const nlForm = document.getElementById('nlForm');
-  if (nlForm){
-    const nlMsg = document.getElementById('nlMsg');
-    const nlMail = document.getElementById('nlEmail');
-    const nlBtn = nlForm.querySelector('button[type="submit"]');
-    nlForm.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      if(!nlMail.checkValidity()){ nlMsg.textContent = t('nl.err'); return; }
-      if (!formReady()){ nlMsg.textContent = t('nl.ok'); nlForm.reset(); return; }
-      nlMsg.textContent = t('fo.sending');
-      if (nlBtn) nlBtn.disabled = true;
-      try {
-        await postForm({
-          subject: 'Newsletter — C.P.S', name: 'Newsletter',
-          email: nlMail.value, message: 'Εγγραφή στο newsletter · ' + location.href
-        });
-        nlMsg.textContent = t('nl.ok'); nlForm.reset();
-      } catch (err){
-        nlMsg.textContent = t('fo.fail');
-      } finally {
-        if (nlBtn) nlBtn.disabled = false;
-      }
-    });
-  }
 })();
 
 /* ─────────────── 4) ΣΕΛΙΔΑ ΕΡΓΟΥ (project.html) ─────────────── */

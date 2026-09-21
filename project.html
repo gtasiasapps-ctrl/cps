@@ -60,7 +60,7 @@
   if (reload && location.hash) history.replaceState(null, '', location.pathname + location.search);
   window.__CPS_RELOAD = reload;
 })();</script>
-<link rel="stylesheet" href="assets/cps.css?v=20260921i" />
+<link rel="stylesheet" href="assets/cps.css?v=20260921j" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -84,6 +84,7 @@
     "streetAddress": "Κουμουνδούρου Αλέξανδρου 24, Άγιος Νικόλαος",
     "addressLocality": "Λάρισα",
     "addressRegion": "Θεσσαλία",
+    "postalCode": "41222",
     "addressCountry": "GR"
   },
   "geo": {
@@ -110,13 +111,30 @@
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": [
         "Monday",
-        "Tuesday",
         "Wednesday",
-        "Thursday",
         "Friday"
       ],
       "opens": "09:00",
-      "closes": "17:00"
+      "closes": "14:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Wednesday",
+        "Friday"
+      ],
+      "opens": "18:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "opens": "09:00",
+      "closes": "14:00"
     }
   ],
   "knowsLanguage": [
@@ -343,7 +361,7 @@
   </div>
 </footer>
 
-<script src="assets/cps-data.js?v=20260921i"></script>
-<script src="assets/cps.js?v=20260921i"></script>
+<script src="assets/cps-data.js?v=20260921j"></script>
+<script src="assets/cps.js?v=20260921j"></script>
 </body>
 </html>
