@@ -18,16 +18,16 @@ const I18N = {
     "co.f1":"Τεχνογνωσία σε νέα δομικά υλικά","co.f2":"Μοντέρνες σχεδιαστικές ιδέες",
     "co.f3":"Σύγχρονη αντίληψη κατασκευαστικών δεδομένων","co.f4":"Ποιότητα κατασκευής",
     "co.f5":"Συλλογική εργασία","co.f6":"Ορθολογική οικονομική διαχείριση",
-    "sv.img":"Έργο της CPS Solutions στη Λάρισα","sv.eyebrow":"Υπηρεσίες","sv.h2":"Ολοκληρωμένες λύσεις για κάθε χώρο",
-    "sv.t1":"Πολιτικός Μηχανικός","sv.d1":"Μελέτη, κατασκευή και διαχείριση έργων — με πλήρη έλεγχο σε κάθε στάδιο.",
-    "sv.a1":"Ανάλυση αναγκών & σκοπιμότητας","sv.a2":"Αρχιτεκτονική & στατική μελέτη","sv.a3":"Αδειοδοτήσεις & διαδικασίες",
-    "sv.a4":"Κατασκευή & επίβλεψη","sv.a5":"Παράδοση & διαχείριση",
-    "sv.t2":"Διακόσμηση","sv.d2":"Σχεδιασμός εσωτερικών χώρων με ταυτότητα, λειτουργικότητα και αίσθηση.",
-    "sv.b1":"Concept & διάταξη χώρων","sv.b2":"Επιλογή υλικών & φωτισμού","sv.b3":"3D απεικονίσεις",
-    "sv.b4":"Επίπλωση & διακόσμηση","sv.b5":"Επίβλεψη υλοποίησης",
-    "sv.t3":"Τεχνικές λύσεις έργων","sv.d3":"Ολοκληρωμένες τεχνικές λύσεις με έμφαση στην ενεργειακή απόδοση.",
-    "sv.c1":"Συστήματα υψηλής θερμομόνωσης","sv.c2":"Ενεργειακή αναβάθμιση κελύφους","sv.c3":"BREEAM / βιώσιμη κατασκευή",
-    "sv.c4":"Επιλογή πιστοποιημένων υλικών",
+    "sv.img":"Έργο της CPS Solutions στη Λάρισα","sv.t1":"Architecture","sv.d1":"Αρχιτεκτονική σύνθεση και μελέτη — από το concept στην οριστική μελέτη και την άδεια.","sv.b11":"Concept &amp; προμελέτη","sv.b12":"Οριστική αρχιτεκτονική μελέτη","sv.b13":"3D απεικονίσεις &amp; renders","sv.b14":"Έκδοση οικοδομικής άδειας","sv.t2":"Engineering","sv.d2":"Στατικές, ενεργειακές και ηλεκτρομηχανολογικές μελέτες με τεχνική αρτιότητα.","sv.b21":"Στατική μελέτη &amp; αντισεισμικός έλεγχος","sv.b22":"Ενεργειακή μελέτη (ΚΕΝΑΚ)","sv.b23":"Η/Μ μελέτες","sv.b24":"Επίβλεψη κατασκευής","sv.t3":"Interior Design","sv.d3":"Σχεδιασμός εσωτερικών χώρων με ταυτότητα, λειτουργικότητα και αίσθηση.","sv.b31":"Concept &amp; διάταξη χώρων","sv.b32":"Υλικά &amp; φωτισμός","sv.b33":"3D απεικονίσεις","sv.b34":"Επίπλωση &amp; επίβλεψη","sv.t4":"Project Management","sv.d4":"Συντονισμός και έλεγχος του έργου: χρόνος, κόστος, ποιότητα, ασφάλεια.","sv.b41":"Χρονοδιάγραμμα &amp; προϋπολογισμός","sv.b42":"Διαχείριση συνεργείων","sv.b43":"Έλεγχος ποιότητας","sv.b44":"Παράδοση έργου","sv.t5":"Real Estate Development (BREEAM Accredited)","sv.d5":"Ανάπτυξη ακινήτων από το μηδέν, με βιώσιμη κατασκευή και πιστοποίηση BREEAM.","sv.b51":"Ανάλυση σκοπιμότητας","sv.b52":"Χρηματοοικονομική εκτίμηση","sv.b53":"Βιώσιμη κατασκευή (BREEAM)","sv.b54":"Διαχείριση ακινήτου","sv.eyebrow":"Υπηρεσίες","sv.h2":"Ολοκληρωμένες λύσεις για κάθε χώρο",
+    
+    
+    
+    
+    
+    
+    
+    
+    
     "pr.eyebrow":"Έργα","pr.h2":"Επερχόμενα έργα","pr.list":"Όλα τα επερχόμενα έργα",
     "pr.note":"Ενδεικτικά έργα (demo) — θα αντικατασταθούν με τις πραγματικές φωτογραφίες.",
     "pr.f.all":"Όλα","pr.f.res":"Κατοικίες","pr.f.com":"Επαγγελματικοί χώροι","pr.f.hosp":"Φιλοξενία","pr.f.retail":"Καταστήματα",
@@ -42,7 +42,7 @@ const I18N = {
     "fo.err":"Συμπληρώστε τα υποχρεωτικά πεδία.","fo.sending":"Γίνεται αποστολή…","fo.done":"Ευχαριστούμε! Το αίτημά σας στάλθηκε — θα λάβετε απάντηση εντός 1 εργάσιμης ημέρας.","fo.fail":"Κάτι πήγε στραβά. Δοκιμάστε ξανά ή στείλτε μας email.","fo.ok":"Ευχαριστούμε! Ανοίγει το email σας για την αποστολή…",
     "fq.eyebrow":"Συχνές Ερωτήσεις","fq.h2":"Αυτά που μας ρωτούν πιο συχνά","fq.q1":"Πώς ξεκινάει ένα έργο μαζί σας;","fq.a1":"Με μια πρώτη συνάντηση όπου καταγράφουμε τις ανάγκες σας. Ακολουθεί η ανάλυση σκοπιμότητας, η μελέτη, οι αδειοδοτήσεις, η κατασκευή και η επίβλεψη, μέχρι την παράδοση του έργου.","fq.q2":"Αναλαμβάνετε την οικοδομική άδεια;","fq.a2":"Ναι. Αναλαμβάνουμε ολόκληρη τη διαδικασία αδειοδότησης — αρχιτεκτονική και στατική μελέτη, ενεργειακή μελέτη και όλες τις απαιτούμενες εγκρίσεις.","fq.q3":"Κάνετε ανακαινίσεις και διακόσμηση;","fq.a3":"Ναι. Αναλαμβάνουμε ανακαινίσεις κατοικιών και επαγγελματικών χώρων, με interior design, 3D απεικονίσεις και επίβλεψη της υλοποίησης.","fq.q4":"Πόσο κοστίζει μια μελέτη ή ένα έργο;","fq.a4":"Το κόστος εξαρτάται από τα τετραγωνικά, τη χρήση του χώρου και τις μελέτες που απαιτούνται. Μετά την πρώτη συνάντηση λαμβάνετε αναλυτική προσφορά — χωρίς καμία δέσμευση.","fq.q5":"Αναλαμβάνετε ενεργειακή αναβάθμιση;","fq.a5":"Ναι. Εφαρμόζουμε συστήματα υψηλής θερμομόνωσης, αναβαθμίζουμε το κέλυφος και επιλέγουμε πιστοποιημένα υλικά, με στόχο τη μείωση της κατανάλωσης.","fq.q6":"Σε ποιες περιοχές δραστηριοποιείστε;","fq.a6":"Η έδρα μας είναι στη Λάρισα και αναλαμβάνουμε έργα σε όλη τη Θεσσαλία και την Κεντρική Ελλάδα.",
     
-    "ft.tag":"Πολιτικός Μηχανικός · Διακόσμηση · Ολοκληρωμένες Τεχνικές Λύσεις Έργων.",
+    "ft.tag":"Architecture – Engineering – Interior Design – Project Management – Real Estate Development (BREEAM Accredited)",
     "ft.nav":"Πλοήγηση","ft.contact":"Επικοινωνία","ft.city":"Κουμουνδούρου Αλέξανδρου 24, Λάρισα",
     "ft.rights":"© 2026 C.P.S — Complete Project Solutions. Όλα τα δικαιώματα διατηρούνται.",
     "ft.reg":"Γ.Ε.ΜΗ. 186189540000","ft.cookies":"Πολιτική Cookies",
@@ -63,16 +63,16 @@ const I18N = {
     "co.f1":"Expertise in new building materials","co.f2":"Modern design ideas",
     "co.f3":"A contemporary understanding of construction data","co.f4":"Construction quality",
     "co.f5":"Teamwork","co.f6":"Rational cost management",
-    "sv.img":"A CPS Solutions project in Larissa","sv.eyebrow":"Services","sv.h2":"Complete solutions for every space",
-    "sv.t1":"Civil Engineer","sv.d1":"Design, construction and project management — with full control at every stage.",
-    "sv.a1":"Needs & feasibility analysis","sv.a2":"Architectural & structural design","sv.a3":"Permits & approvals",
-    "sv.a4":"Construction & supervision","sv.a5":"Handover & management",
-    "sv.t2":"Interior Design","sv.d2":"Interior spaces with identity, functionality and feel.",
-    "sv.b1":"Concept & space planning","sv.b2":"Materials & lighting selection","sv.b3":"3D visualisations",
-    "sv.b4":"Furnishing & decoration","sv.b5":"Site supervision",
-    "sv.t3":"Technical solutions","sv.d3":"Complete technical solutions focused on energy performance.",
-    "sv.c1":"High-performance insulation systems","sv.c2":"Building-envelope energy upgrades","sv.c3":"BREEAM / sustainable construction",
-    "sv.c4":"Certified materials selection",
+    "sv.img":"A CPS Solutions project in Larissa","sv.t1":"Architecture","sv.d1":"Architectural design and studies — from concept to final design and permits.","sv.b11":"Concept &amp; preliminary design","sv.b12":"Final architectural design","sv.b13":"3D visuals &amp; renders","sv.b14":"Building permit issuance","sv.t2":"Engineering","sv.d2":"Structural, energy and MEP studies with technical excellence.","sv.b21":"Structural design &amp; seismic checks","sv.b22":"Energy study (KENAK)","sv.b23":"MEP engineering","sv.b24":"Construction supervision","sv.t3":"Interior Design","sv.d3":"Interior spaces with identity, functionality and feel.","sv.b31":"Concept &amp; space planning","sv.b32":"Materials &amp; lighting","sv.b33":"3D visuals","sv.b34":"Furnishing &amp; supervision","sv.t4":"Project Management","sv.d4":"Coordination and control: time, cost, quality and safety.","sv.b41":"Schedule &amp; budget","sv.b42":"Contractor management","sv.b43":"Quality control","sv.b44":"Project delivery","sv.t5":"Real Estate Development (BREEAM Accredited)","sv.d5":"Real estate development with sustainable construction and BREEAM certification.","sv.b51":"Feasibility analysis","sv.b52":"Financial appraisal","sv.b53":"Sustainable construction (BREEAM)","sv.b54":"Property management","sv.eyebrow":"Services","sv.h2":"Complete solutions for every space",
+    
+    
+    
+    
+    
+    
+    
+    
+    
     "pr.eyebrow":"Projects","pr.h2":"Upcoming projects","pr.list":"All upcoming projects",
     "pr.note":"Indicative projects (demo) — to be replaced with the real photographs.",
     "pr.f.all":"All","pr.f.res":"Residential","pr.f.com":"Commercial","pr.f.hosp":"Hospitality","pr.f.retail":"Retail",
@@ -87,7 +87,7 @@ const I18N = {
     "fo.err":"Please fill in the required fields.","fo.sending":"Sending…","fo.done":"Thank you! Your request has been sent — you will hear from us within 1 business day.","fo.fail":"Something went wrong. Please try again or email us directly.","fo.ok":"Thank you! Opening your email app…",
     "fq.eyebrow":"FAQ","fq.h2":"What we get asked most","fq.q1":"How does a project start?","fq.a1":"With a first meeting where we record your needs. Then comes the feasibility analysis, the design, the permits, the construction and the supervision, through to delivery.","fq.q2":"Do you handle the building permit?","fq.a2":"Yes. We handle the entire licensing process — architectural and structural design, energy studies and all required approvals.","fq.q3":"Do you do renovations and interior design?","fq.a3":"Yes. We take on renovations of homes and commercial spaces, with interior design, 3D visuals and supervision of the works.","fq.q4":"What does a study or a project cost?","fq.a4":"The cost depends on the square metres, the use of the space and the studies required. After the first meeting you receive a detailed quote — with no obligation.","fq.q5":"Do you undertake energy upgrades?","fq.a5":"Yes. We apply high-performance insulation systems, upgrade the building envelope and select certified materials, aiming at lower energy consumption.","fq.q6":"Which areas do you cover?","fq.a6":"We are based in Larissa and undertake projects across Thessaly and Central Greece.",
     
-    "ft.tag":"Civil engineering · Interior design · Complete technical project solutions.",
+    "ft.tag":"Architecture – Engineering – Interior Design – Project Management – Real Estate Development (BREEAM Accredited)",
     "ft.nav":"Navigation","ft.contact":"Contact","ft.city":"Koumoundourou Alexandrou 24, Larissa",
     "ft.rights":"© 2026 C.P.S — Complete Project Solutions. All rights reserved.",
     "ft.reg":"Reg. no. 186189540000","ft.cookies":"Cookie Policy",

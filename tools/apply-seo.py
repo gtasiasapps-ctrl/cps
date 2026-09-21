@@ -30,15 +30,6 @@ PAGES = {
         ogd="Architecture – Engineering – Interior Design – Project Management – Real Estate Development (BREEAM Accredited) — από το 2002 στη Λάρισα.",
         crumb=[("Αρχική", "/")],
     ),
-    "company.html": dict(
-        title="Η Επιχείρηση | CPS Solutions Λάρισα",
-        desc="Από το 2002 στη Λάρισα: ομάδα μηχανικών με εμπειρία στη μελέτη, κατασκευή και διαχείριση έργων. "
-             "Τεχνογνωσία σε νέα δομικά υλικά, άρτια διεκπεραίωση, συνέπεια στις παραδόσεις.",
-        og="Η Επιχείρηση — CPS Solutions Λάρισα",
-        ogd="Μηχανικοί με εμπειρία από τη μελέτη ως τη διαχείριση του έργου. Λάρισα, από το 2002.",
-        crumb=[("Αρχική", "/"), ("Η Επιχείρηση", "/company.html")],
-        page_type="AboutPage",
-    ),
     "services.html": dict(
         title="Υπηρεσίες | CPS Solutions Λάρισα",
         desc="Real Estate Development, Interior Design και ολοκληρωμένες τεχνικές λύσεις: μελέτη, αδειοδότηση, "

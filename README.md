@@ -16,7 +16,6 @@ Site για την **C.P.S – Complete Project Solutions** (Λάρισα, απ�
 ```
 cps/
 ├── index.html              ← ΑΡΧΙΚΗ: μόνο hero + επερχόμενα έργα
-├── company.html            ← Η Επιχείρηση (+ statement + KPI)
 ├── services.html           ← Υπηρεσίες (+ CTA)
 ├── contact.html            ← Επικοινωνία (στοιχεία + φόρμα)
 ├── project.html            ← σελίδα έργου  →  project.html?p=<slug>
@@ -62,13 +61,12 @@ cps/
 | Σελίδα | Περιεχόμενο |
 |---|---|
 | **index.html** | **Μόνο** hero (full-screen carousel φωτογραφιών) και **Επερχόμενα έργα** (φίλτρα + grid + λίστα) |
-| **company.html** | Η Επιχείρηση: statement («ΤΟ ΑΡΤΙΟ»), KPI, κείμενο εταιρίας + 6 παράγοντες |
 | **services.html** | Οι 3 υπηρεσίες + CTA προς επικοινωνία |
 | **contact.html** | Στοιχεία επικοινωνίας (διεύθυνση + ΤΚ, τηλ., ωράριο), φόρμα |
 | **project.html** | Σελίδα έργου (`?p=<slug>`): βασική εικόνα, στοιχεία, φωτογραφίες + lightbox, prev/next |
 
 Το **nav** και το **footer** είναι ίδια σε όλες τις σελίδες:
-`Αρχική → index.html` · `Η Επιχείρηση → company.html` · `Υπηρεσίες → services.html` ·
+`Αρχική → index.html` · `Υπηρεσίες → services.html` ·
 `Έργα → index.html#projects` · `Επικοινωνία → contact.html`.
 
 Στο **nav, τέρμα δεξιά**, υπάρχουν εικονίδια **Facebook & Instagram** (`.social`, inline SVG,
