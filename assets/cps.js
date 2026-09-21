@@ -484,7 +484,7 @@ let renderProject = null;
     const prev = PROJECTS[(i - 1 + PROJECTS.length) % PROJECTS.length];
     const next = PROJECTS[(i + 1) % PROJECTS.length];
 
-    document.title = `${L.title} — ${L.loc} | C.P.S`;
+    document.title = `${L.title} — ${L.loc} | CPS Solutions`;
 
     // ── SEO: meta + structured data ανά έργο ──
     (function(){
@@ -495,10 +495,10 @@ let renderProject = null;
         : `${L.title} (${L.tag}) — ${L.loc}. Έργο της C.P.S – Complete Project Solutions: μελέτη, κατασκευή και διαχείριση έργων στη Λάρισα.`;
       const setM = (sel, val) => { const el = document.querySelector(sel); if (el) el.setAttribute('content', val); };
       setM('meta[name="description"]', desc);
-      setM('meta[property="og:title"]', `${L.title} — ${L.loc} | C.P.S`);
+      setM('meta[property="og:title"]', `${L.title} — ${L.loc} | CPS Solutions`);
       setM('meta[property="og:description"]', desc);
       setM('meta[property="og:image"]', img);
-      setM('meta[name="twitter:title"]', `${L.title} — ${L.loc} | C.P.S`);
+      setM('meta[name="twitter:title"]', `${L.title} — ${L.loc} | CPS Solutions`);
       setM('meta[name="twitter:description"]', desc);
       setM('meta[name="twitter:image"]', img);
       syncMeta(p.slug);

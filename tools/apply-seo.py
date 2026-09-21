@@ -23,44 +23,44 @@ KEYS = ("πολιτικός μηχανικός Λάρισα, μελέτη και
 
 PAGES = {
     "index.html": dict(
-        title="Πολιτικός Μηχανικός & Interior Design στη Λάρισα | C.P.S",
+        title="CPS Solutions Λάρισα",
         desc="Η C.P.S – Complete Project Solutions (Λάρισα, από το 2002) αναλαμβάνει μελέτη, αδειοδότηση, "
              "κατασκευή και διαχείριση έργων: κατοικίες, επαγγελματικοί χώροι, διακόσμηση. Ζητήστε προσφορά.",
-        og="C.P.S – Complete Project Solutions, Λάρισα",
+        og="CPS Solutions Λάρισα",
         ogd="Πολιτικός μηχανικός, διακόσμηση και ολοκληρωμένες τεχνικές λύσεις έργων — από το 2002 στη Λάρισα.",
         crumb=[("Αρχική", "/")],
     ),
     "company.html": dict(
-        title="Η Επιχείρηση | C.P.S – Μηχανικοί στη Λάρισα από το 2002",
+        title="Η Επιχείρηση | CPS Solutions Λάρισα",
         desc="Από το 2002 στη Λάρισα: ομάδα μηχανικών με εμπειρία στη μελέτη, κατασκευή και διαχείριση έργων. "
              "Τεχνογνωσία σε νέα δομικά υλικά, άρτια διεκπεραίωση, συνέπεια στις παραδόσεις.",
-        og="Η Επιχείρηση — C.P.S",
+        og="Η Επιχείρηση — CPS Solutions Λάρισα",
         ogd="Μηχανικοί με εμπειρία από τη μελέτη ως τη διαχείριση του έργου. Λάρισα, από το 2002.",
         crumb=[("Αρχική", "/"), ("Η Επιχείρηση", "/company.html")],
         page_type="AboutPage",
     ),
     "services.html": dict(
-        title="Υπηρεσίες | Πολιτικός Μηχανικός, Διακόσμηση & Ενεργειακή Αναβάθμιση – Λάρισα",
+        title="Υπηρεσίες | CPS Solutions Λάρισα",
         desc="Real Estate Development, Interior Design και ολοκληρωμένες τεχνικές λύσεις: μελέτη, αδειοδότηση, "
              "κατασκευή, επίβλεψη, ενεργειακή αναβάθμιση. Λάρισα & Θεσσαλία.",
-        og="Υπηρεσίες — C.P.S Λάρισα",
+        og="Υπηρεσίες — CPS Solutions Λάρισα",
         ogd="Real Estate Development · Interior Design · Νέα δομικά συστήματα & ενεργειακή αναβάθμιση.",
         crumb=[("Αρχική", "/"), ("Υπηρεσίες", "/services.html")],
     ),
     "contact.html": dict(
-        title="Επικοινωνία | C.P.S Λάρισα – 2410 538740",
+        title="Επικοινωνία | CPS Solutions Λάρισα — 2410 538740",
         desc="Κουμουνδούρου Αλέξανδρου 24, Άγιος Νικόλαος, Λάρισα · Τηλ. 2410 538740 · "
              "cps.redea@gmail.com · Δευ–Παρ 09:00–17:00. Στείλτε το αίτημά σας.",
-        og="Επικοινωνία — C.P.S Λάρισα",
+        og="Επικοινωνία — CPS Solutions Λάρισα",
         ogd="Κουμουνδούρου Αλέξανδρου 24, Άγιος Νικόλαος, Λάρισα · 2410 538740 · Δευ–Παρ 09:00–17:00.",
         crumb=[("Αρχική", "/"), ("Επικοινωνία", "/contact.html")],
         page_type="ContactPage",
     ),
     "project.html": dict(
-        title="Έργα | C.P.S – Complete Project Solutions, Λάρισα",
+        title="Έργα | CPS Solutions Λάρισα",
         desc="Επερχόμενα έργα της C.P.S στη Λάρισα: κατοικίες, επαγγελματικοί χώροι, φιλοξενία, καταστήματα. "
              "Μελέτη, κατασκευή και διαχείριση έργων από το 2002.",
-        og="Έργα — C.P.S Λάρισα",
+        og="Έργα — CPS Solutions Λάρισα",
         ogd="Κατοικίες, επαγγελματικοί χώροι, φιλοξενία και καταστήματα — μελέτη, κατασκευή, διαχείριση.",
         crumb=[("Αρχική", "/"), ("Έργα", "/index.html#projects")],
     ),
@@ -101,8 +101,8 @@ def business_ld():
         "@context": "https://schema.org",
         "@type": "GeneralContractor",
         "@id": f"{SITE}/#business",
-        "name": "C.P.S – Complete Project Solutions",
-        "alternateName": ["CPS Solutions", "C.P.S Λάρισα"],
+        "name": "CPS Solutions Λάρισα",
+        "alternateName": ["CPS Solutions", "C.P.S – Complete Project Solutions", "C.P.S Λάρισα"],
         "description": "Πολιτικός μηχανικός, διακόσμηση και ολοκληρωμένες τεχνικές λύσεις έργων στη Λάρισα, από το 2002.",
         "url": f"{SITE}/",
         "logo": f"{SITE}/assets/cps-lockup.png",
@@ -146,7 +146,7 @@ def website_ld():
         "@type": "WebSite",
         "@id": f"{SITE}/#website",
         "url": f"{SITE}/",
-        "name": "C.P.S – Complete Project Solutions",
+        "name": "CPS Solutions Λάρισα",
         "inLanguage": ["el", "en"],
         "publisher": {"@id": f"{SITE}/#business"},
     }
@@ -222,7 +222,7 @@ def head_block(p, file):
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="C.P.S – Complete Project Solutions" />
+<meta property="og:site_name" content="CPS Solutions Λάρισα" />
 <meta property="og:locale" content="el_GR" />
 <meta property="og:locale:alternate" content="en_US" />
 <meta property="og:title" content="{p['og']}" />
