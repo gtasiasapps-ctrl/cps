@@ -94,6 +94,7 @@ function applyI18n(){
   document.querySelectorAll('[data-i18n-ph]').forEach(el=>{ el.placeholder = t(el.dataset.i18nPh); });
   document.querySelectorAll('[data-i18n-aria]').forEach(el=>{ el.setAttribute('aria-label', t(el.dataset.i18nAria)); });
   document.querySelectorAll('[data-i18n-title]').forEach(el=>{ el.setAttribute('title', t(el.dataset.i18nTitle)); });
+  document.querySelectorAll('[data-i18n-alt]').forEach(el=>{ el.setAttribute('alt', t(el.dataset.i18nAlt)); });
   document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on', b.dataset.lang === LANG));
   if (typeof syncMeta === 'function') syncMeta(currentSlug());
 }
@@ -235,7 +236,7 @@ let carouselGo = null, carouselRestart = null;
     if (hasLogo && i > 0) from = 1;             // από 'δω και πέρα όχι ξανά λογότυπο
   }
   // Διάρκεια κάθε slide (γρήγορο: 4s το λογότυπο, 3s οι φωτογραφίες)
-  const DUR_LOGO = 4000, DUR_SLIDE = 3000;
+  const DUR_LOGO = 3000, DUR_SLIDE = 2400;
   const DUR = i => (SLIDES[i] && SLIDES[i].logo ? DUR_LOGO : DUR_SLIDE);
   function tickNext(){
     timer = setTimeout(()=>{

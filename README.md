@@ -44,10 +44,10 @@ cps/
   crossfade 1,15s + αργό Ken Burns, pause στο hover, swipe σε touch,
   pause όταν το tab είναι κρυφό. (Χωρίς dots.)
 - **1ο slide = το λογότυπο** (`CAROUSEL_LOGO` στο `cps-data.js` → `carousel/cps-wordmark.png`):
-  λευκό φόντο, κεντραρισμένο, `object-fit:contain`, **χωρίς** zoom, μένει **4s**.
+  λευκό φόντο, κεντραρισμένο, `object-fit:contain`, **χωρίς** zoom, μένει **3s**.
   Παίζει **ΠΑΝΤΑ πρώτο** σε κάθε είσοδο στο site (κάθε φόρτωση της αρχικής ξεκινά από slide 0) —
   μετά ο κύκλος συνεχίζει **μόνο με φωτογραφίες** (το λογότυπο δεν ξαναεμφανίζεται στον κύκλο).
-  Οι φωτογραφίες ορίζονται στον πίνακα `CAROUSEL` (ίδιος φάκελος `carousel/`) και μένουν **3s** η καθεμία
+  Οι φωτογραφίες ορίζονται στον πίνακα `CAROUSEL` (ίδιος φάκελος `carousel/`) και μένουν **2,4s** η καθεμία
   (`DUR_LOGO` / `DUR_SLIDE` στο `cps.js` · crossfade 0,8s · Ken Burns 5,5s).
   Λογική: `hasLogo` + `from` (αρχή κύκλου) στο IIFE του carousel στο `assets/cps.js`.
 - **Στο κάτω μέρος** υπάρχει απαλό λευκό gradient (`::after`) για ομαλή μετάβαση στην επόμενη ενότητα.
@@ -184,6 +184,14 @@ Overlay με **λευκό φόντο + τα δύο λόγκο (C.P.S wordmark **
   (ώστε ο browser να μην «πηδήξει» στην ενότητα) και το `assets/cps.js` κάνει `scrollTo(0,0)`.
   Αν είναι `navigate` (κλικ σε link), το `#section` **τιμάται** κανονικά.
 - Στη σελίδα έργου δεν αλλάζει τίποτα άλλο: το `?p=<slug>` κρατά το σωστό έργο.
+
+## Στατική φωτογραφία στις Υπηρεσίες
+
+Στη `services.html`, αμέσως μετά το `page-head`, υπάρχει `#sv-photo` με `carousel/01.jpg`
+(η φωτογραφία του carousel — **όχι** το λογότυπο): `.sv-photo{max-width:880px}` + `aspect-ratio:3/2`
+(`4/3` στο κινητό), `object-fit:cover`, `reveal` animation, `loading="lazy"`.
+Το `alt` αλλάζει με τη γλώσσα (`data-i18n-alt="sv.img"` — το `applyI18n()` υποστηρίζει πλέον
+`data-i18n-aria` / `data-i18n-title` / `data-i18n-alt`).
 
 ## Φόρμα επικοινωνίας → email
 

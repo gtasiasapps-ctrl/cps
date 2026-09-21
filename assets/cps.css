@@ -534,3 +534,13 @@ body.page::before{
   .faq-item summary{font-size:.97rem; padding:17px 0}
   .faq-item summary:hover{padding-left:0}
 }
+
+/* ═══════════ Στατική φωτογραφία στην ενότητα Υπηρεσίες ═══════════ */
+#sv-photo{padding-top:0}
+.sv-photo{max-width:880px; margin:0 auto}
+.sv-photo img{
+  width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; display:block;
+}
+@media (max-width:720px){
+  .sv-photo img{aspect-ratio:4/3}
+}
