@@ -128,12 +128,13 @@ function setLang(l){
 const CONTACT_EMAIL = 'cps.redea@gmail.com';
 const FORM = {
   provider: 'web3forms',       // 'web3forms' (access key) | 'formsubmit' (χωρίς key) | 'formspree' (form id)
-  to: CONTACT_EMAIL,           // (χρησιμοποιείται μόνο από τον provider 'formsubmit')
-  key: '16876d94-9263-47be-bb3f-5f9882f292ca'               // ← web3forms access key
+  fallback: 'formsubmit',      // αν αποτύχει ο provider → δοκιμάζει αυτόν (0€, χωρίς key)
+  to: CONTACT_EMAIL,           // email προορισμού (το χρησιμοποιεί ο provider 'formsubmit')
+  key: '16876d94-9263-47be-bb3f-5f9882f292ca'   // ← web3forms access key
 };
-const formReady = () => FORM.provider === 'formsubmit'
-  ? !!FORM.to
-  : !!(FORM.provider && FORM.key);
+const needsKey = p => (p === 'web3forms' || p === 'formspree');
+const providerReady = p => p === 'formsubmit' ? !!FORM.to : (needsKey(p) ? !!FORM.key : false);
+const formReady = () => [FORM.provider, FORM.fallback].some(p => p && providerReady(p));
 const okJSON = (j, r) => {
   if (!r.ok) return false;
   if (j == null) return true;
@@ -143,18 +144,18 @@ const okJSON = (j, r) => {
   return true;
 };
 
-async function postForm(data){
-  if (!formReady()) throw new Error('form-not-configured');
-  const u = FORM.provider === 'formspree'  ? 'https://formspree.io/f/' + FORM.key
-          : FORM.provider === 'web3forms'  ? 'https://api.web3forms.com/submit'
+async function postOnce(provider, data){
+  if (!providerReady(provider)) throw new Error('provider-not-configured:' + provider);
+  const u = provider === 'formspree'  ? 'https://formspree.io/f/' + FORM.key
+          : provider === 'web3forms'  ? 'https://api.web3forms.com/submit'
           : 'https://formsubmit.co/ajax/' + FORM.to;
-  // FormData (multipart) → «απλό» request, χωρίς CORS preflight (δουλεύει παντού)
+  // FormData (multipart) → «απλό» request, χωρίς CORS preflight
   const fd = new FormData();
-  if (FORM.provider === 'web3forms'){
+  if (provider === 'web3forms'){
     fd.append('access_key', FORM.key);
     fd.append('from_name', 'C.P.S — Ιστοσελίδα');
     fd.append('botcheck', '');
-  } else if (FORM.provider === 'formspree'){
+  } else if (provider === 'formspree'){
     fd.append('_subject', data.subject);
   } else {                                    // formsubmit
     fd.append('_subject', data.subject);
@@ -166,7 +167,21 @@ async function postForm(data){
   const r = await fetch(u, { method: 'POST', headers: { 'Accept': 'application/json' }, body: fd });
   let j = null; try { j = await r.json(); } catch (e) {}
   if (!okJSON(j, r)) throw new Error((j && (j.message || j.error)) || ('HTTP ' + r.status));
-  return true;
+  return provider;
+}
+
+/* Δοκιμάζει τον provider και, αν αποτύχει, τον fallback —
+   ώστε ένα CORS/δικτυακό πρόβλημα να μην χάνει το αίτημα. */
+async function postForm(data){
+  const chain = [FORM.provider, FORM.fallback]
+    .filter((p, i, a) => p && a.indexOf(p) === i && providerReady(p));
+  if (!chain.length) throw new Error('form-not-configured');
+  let lastErr = null;
+  for (const p of chain){
+    try { return await postOnce(p, data); }
+    catch (e) { lastErr = e; }
+  }
+  throw lastErr || new Error('send-failed');
 }
 
 /* βοηθητικές διαδρομές εικόνων: projects/<slug>/cover.jpg κ.λπ. */

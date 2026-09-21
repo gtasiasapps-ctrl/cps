@@ -193,7 +193,8 @@ Overlay με **λευκό φόντο + τα δύο λόγκο (C.P.S wordmark **
 const FORM = {
   provider: 'web3forms',    // 'web3forms' | 'formsubmit' | 'formspree'
   to: 'cps.redea@gmail.com',
-  key: ''                   // web3forms: access key · formspree: form id
+  key: '',                  // web3forms: access key · formspree: form id
+  fallback: 'formsubmit'    // αν αποτύχει ο provider → δεύτερος (0€, χωρίς key)
 };
 ```
 
@@ -212,6 +213,14 @@ const FORM = {
   `provider:'web3forms'`, `key:'…'`. Δωρεάν **250 submissions/μήνα**, χωρίς λογαριασμό.
 - **`formspree`** — https://formspree.io → φτιάξε form → `provider:'formspree'`, `key:'το-id'`.
   Δωρεάν **μόνο 50/μήνα** (για testing)· μετά **$15/μήνα** (Personal). Έχει dashboard/ιστορικό.
+
+**Αλυσίδα αποστολής (fallback):** δοκιμάζει πρώτα τον `provider` και, αν αποτύχει
+(π.χ. CORS/δίκτυο/Cloudflare), δοκιμάζει τον `fallback`· αν αποτύχουν και οι δύο → μήνυμα
+σφάλματος + `mailto:`.
+⚠️ **Σημείωση 21/09:** το `api.web3forms.com` βρίσκεται πίσω από Cloudflare bot-protection
+και γύρισε 403 χωρίς CORS headers σε αυτοματοποιημένο browser — γι' αυτό μπήκε ο
+`fallback: 'formsubmit'` (επιβεβαιωμένο CORS `*`). Αν ο web3forms δουλέψει από πραγματικό
+browser, τα email έρχονται από κει· αλλιώς από το FormSubmit.
 
 **Τεχνικά:** `postForm()` στέλνει `FormData` (multipart) με `Accept: application/json`
 → *απλό* request, **χωρίς CORS preflight** (δουλεύει σε κάθε static host). Η επιτυχία
