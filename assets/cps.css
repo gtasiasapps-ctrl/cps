@@ -537,7 +537,7 @@ body.page::before{
 
 /* ═══════════ Στατική φωτογραφία στην ενότητα Υπηρεσίες ═══════════ */
 #sv-photo{padding-top:0}
-.sv-photo{max-width:880px; margin:0 auto}
+.sv-photo{max-width:1060px; margin:0 auto}
 .sv-photo img{
   width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; display:block;
 }
