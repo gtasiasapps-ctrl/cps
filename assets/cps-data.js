@@ -5,7 +5,7 @@
 const I18N = {
   el: {
     "nav.home":"Αρχική","nav.company":"Η Επιχείρηση","nav.services":"Υπηρεσίες","nav.projects":"Έργα",
-    "nav.back":"Πίσω","nav.contact":"Επικοινωνία","nav.cta":"Ζητήστε προσφορά","co.line":"Πολιτικός Μηχανικός · Διακόσμηση · Ολοκληρωμένες Τεχνικές Λύσεις Έργων",
+    "nav.back":"Πίσω","nav.contact":"Επικοινωνία","nav.cta":"Ζητήστε προσφορά","co.line":"Architecture – Engineering – Interior Design – Project Management – Real Estate Development (BREEAM Accredited)",
     "st.kicker":"Οι πελάτες μας περιμένουν","st.big":"Το άρτιο","st.sub":"Αυτό επιδιώκουμε σε κάθε έργο",
     "k1b":"Πολιτικός Μηχανικός","k1s":"Μελέτη, κατασκευή & επίβλεψη έργων",
     "k2b":"Διακόσμηση","k2s":"Εσωτερικοί χώροι, υλικά & φωτισμός",
@@ -45,12 +45,12 @@ const I18N = {
     "ft.tag":"Πολιτικός Μηχανικός · Διακόσμηση · Ολοκληρωμένες Τεχνικές Λύσεις Έργων.",
     "ft.nav":"Πλοήγηση","ft.contact":"Επικοινωνία","ft.city":"Κουμουνδούρου Αλέξανδρου 24, Λάρισα",
     "ft.rights":"© 2026 C.P.S — Complete Project Solutions. Όλα τα δικαιώματα διατηρούνται.",
-    "ft.reg":"Γ.Ε.ΜΗ. 000000000000","ft.cookies":"Πολιτική Cookies",
+    "ft.reg":"Γ.Ε.ΜΗ. 186189540000","ft.cookies":"Πολιτική Cookies",
     "pd.back":"Όλα τα επερχόμενα έργα","pd.specs":"Στοιχεία έργου","pd.cat":"Κατηγορία","pd.loc":"Τοποθεσία","pd.status":"Κατάσταση","pd.year":"Παράδοση","pd.note":"Οι εικόνες είναι ενδεικτικές (demo) — θα αντικατασταθούν με τις πραγματικές.","pd.body":"Επερχόμενο έργο — {tag}, {loc}. Η C.P.S – Complete Project Solutions αναλαμβάνει τη μελέτη, την αδειοδότηση, την κατασκευή και τη διαχείριση: από τη σύλληψη της ιδέας έως την παράδοση.","pd.gallery":"Φωτογραφίες","pd.zoom":"Πατήστε σε μια φωτογραφία για μεγέθυνση","pd.prev":"Προηγούμενο έργο","pd.next":"Επόμενο έργο","pd.cta":"Ζητήστε προσφορά για το έργο σας","st.dev":"Υπό ανάπτυξη","st.des":"Υπό μελέτη","st.plan":"Προγραμματισμένο","mail.subject":"Αίτημα από το site","mail.name":"Όνομα","mail.phone":"Τηλέφωνο","mail.email":"Email","mail.topic":"Ενδιαφέρον"
   },
   en: {
     "nav.home":"Home","nav.company":"The Company","nav.services":"Services","nav.projects":"Projects",
-    "nav.back":"Back","nav.contact":"Contact","nav.cta":"Request a quote","co.line":"Civil engineering · Interior design · Complete technical project solutions",
+    "nav.back":"Back","nav.contact":"Contact","nav.cta":"Request a quote","co.line":"Architecture – Engineering – Interior Design – Project Management – Real Estate Development (BREEAM Accredited)",
     "st.kicker":"Our clients expect","st.big":"The flawless","st.sub":"It is what we strive for in every project",
     "k1b":"Civil Engineer","k1s":"Design, construction & supervision",
     "k2b":"Interior Design","k2s":"Interiors, materials & lighting",
@@ -90,7 +90,7 @@ const I18N = {
     "ft.tag":"Civil engineering · Interior design · Complete technical project solutions.",
     "ft.nav":"Navigation","ft.contact":"Contact","ft.city":"Koumoundourou Alexandrou 24, Larissa",
     "ft.rights":"© 2026 C.P.S — Complete Project Solutions. All rights reserved.",
-    "ft.reg":"Reg. no. 000000000000","ft.cookies":"Cookie Policy",
+    "ft.reg":"Reg. no. 186189540000","ft.cookies":"Cookie Policy",
     "pd.back":"All upcoming projects","pd.specs":"Project details","pd.cat":"Category","pd.loc":"Location","pd.status":"Status","pd.year":"Delivery","pd.note":"Images are indicative (demo) — to be replaced with the real ones.","pd.body":"Upcoming project — {tag}, {loc}. C.P.S – Complete Project Solutions handles design, permitting, construction and management: from concept to handover.","pd.gallery":"Photos","pd.zoom":"Click a photo to enlarge","pd.prev":"Previous project","pd.next":"Next project","pd.cta":"Request a quote for your project","st.dev":"In development","st.des":"In design","st.plan":"Planned","mail.subject":"Website enquiry","mail.name":"Name","mail.phone":"Phone","mail.email":"Email","mail.topic":"Interest"
   }
 };

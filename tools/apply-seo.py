@@ -27,7 +27,7 @@ PAGES = {
         desc="Η C.P.S – Complete Project Solutions (Λάρισα, από το 2002) αναλαμβάνει μελέτη, αδειοδότηση, "
              "κατασκευή και διαχείριση έργων: κατοικίες, επαγγελματικοί χώροι, διακόσμηση. Ζητήστε προσφορά.",
         og="CPS Solutions Λάρισα",
-        ogd="Πολιτικός μηχανικός, διακόσμηση και ολοκληρωμένες τεχνικές λύσεις έργων — από το 2002 στη Λάρισα.",
+        ogd="Architecture – Engineering – Interior Design – Project Management – Real Estate Development (BREEAM Accredited) — από το 2002 στη Λάρισα.",
         crumb=[("Αρχική", "/")],
     ),
     "company.html": dict(
@@ -103,7 +103,7 @@ def business_ld():
         "@id": f"{SITE}/#business",
         "name": "CPS Solutions Λάρισα",
         "alternateName": ["CPS Solutions", "C.P.S – Complete Project Solutions", "C.P.S Λάρισα"],
-        "description": "Πολιτικός μηχανικός, διακόσμηση και ολοκληρωμένες τεχνικές λύσεις έργων στη Λάρισα, από το 2002.",
+        "description": "Architecture – Engineering – Interior Design – Project Management – Real Estate Development (BREEAM Accredited) — Λάρισα, από το 2002.",
         "url": f"{SITE}/",
         "logo": f"{SITE}/assets/cps-lockup.png",
         "image": OG_IMG,
@@ -137,6 +137,8 @@ def business_ld():
         ],
         "knowsLanguage": ["el", "en"],
         "slogan": "Μελέτη, κατασκευή & διαχείριση έργων",
+        "identifier": [{"@type": "PropertyValue", "name": "Γ.Ε.ΜΗ.", "value": "186189540000"}],
+        "sameAs": ["https://www.instagram.com/cps_redea/"],
         "hasOfferCatalog": {
             "@type": "OfferCatalog", "name": "Υπηρεσίες C.P.S",
             "itemListElement": [
