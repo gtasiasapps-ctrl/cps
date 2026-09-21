@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Έργο — C.P.S | Complete Project Solutions</title>
+<meta name="description" content="Επερχόμενο έργο της C.P.S – Complete Project Solutions. Μελέτη, κατασκευή και διαχείριση έργων, Λάρισα." />
+<meta name="theme-color" content="#ffffff" />
+<link rel="icon" href="assets/cps-wordmark.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<script>/* ── REFRESH = πάντα από την αρχή (hero) ──
+   Ξεχωρίζει το refresh από το κλικ σε anchor:
+   - refresh/revisit  → αγνοεί το #section και ξεκινά από το hero
+   - κανονική πλοήγηση (κλικ σε link) → σέβεται το #section */
+(function(){
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  document.documentElement.classList.add('cps-loading');
+  var t = null;
+  try { var e = performance.getEntriesByType('navigation')[0]; if (e) t = e.type; } catch (err) {}
+  if (!t && performance.navigation) t = (performance.navigation.type === 1) ? 'reload' : 'navigate';
+  var reload = (t === 'reload');
+  // Σβήνουμε το hash ΠΡΙΝ διαβαστεί το <body class="page">, ώστε ο browser να μη «πηδήξει» στην ενότητα
+  if (reload && location.hash) history.replaceState(null, '', location.pathname + location.search);
+  window.__CPS_RELOAD = reload;
+})();</script>
+<link rel="stylesheet" href="assets/cps.css?v=20260921c" />
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <img class="loader-logo" src="assets/cps-wordmark.png" alt="C.P.S" />
+    <span class="loader-bar"><i></i></span>
+  </div>
+</div>
+
+
+<div id="stage" aria-hidden="true">
+  <div id="logo3d">
+    <div class="logo-shadow"></div>
+    <img class="logo-glow" src="assets/wordmark-front.png" alt="" aria-hidden="true" />
+    <img class="logo-layer logo-back" src="assets/wordmark-depth.png" alt="" aria-hidden="true" />
+    <img class="logo-layer logo-front" src="assets/wordmark-front.png" alt="C.P.S — Complete Project Solutions" />
+  </div>
+</div>
+<div class="grid-lines" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="C.P.S">
+      <img src="assets/cps-lockup.png" alt="C.P.S — Complete Project Solutions" />
+    </a>
+    <nav class="links" id="links">
+      <a href="index.html" data-i18n="nav.home">Αρχική</a>
+      <a href="company.html" data-i18n="nav.company">Η Επιχείρηση</a>
+      <a href="services.html" data-i18n="nav.services">Υπηρεσίες</a>
+      <a href="index.html#projects" data-i18n="nav.projects">Έργα</a>
+      <a href="contact.html" data-i18n="nav.contact">Επικοινωνία</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Γλώσσα / Language">
+        <button type="button" data-lang="el" class="on">EL</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a class="btn btn-primary nav-cta" href="index.html#contact" data-i18n="nav.cta">Ζητήστε προσφορά</a>
+      <div class="social">
+        <!-- ▼▼ ΒΑΛΕ ΕΔΩ ΤΑ ΠΡΑΓΜΑΤΙΚΑ LINKS (facebook / instagram) ▼▼ -->
+        <a href="#" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.87.24-1.46 1.49-1.46h1.59V4.45c-.28-.04-1.22-.12-2.32-.12-2.3 0-3.87 1.4-3.87 3.98V10.5H8.1v3h2.39V21h3.01z"/></svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.1" cy="6.9" r="1.05" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<a class="backtop" data-back href="index.html" aria-label="Πίσω" title="Πίσω" data-i18n-aria="nav.back" data-i18n-title="nav.back">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.6 5.4 8 12l6.6 6.6"/></svg>
+</a>
+
+<main>
+  <section id="pdetail">
+    <div class="wrap">
+      <a class="back" href="index.html#projects" data-i18n="pd.back">Όλα τα επερχόμενα έργα</a>
+      <div class="phead">
+        <p class="eyebrow" id="pTag">Κατοικία</p>
+        <h1 id="pTitle">Μονοκατοικία με πισίνα</h1>
+        <p class="ploc" id="pLoc">Λάρισα</p>
+      </div>
+    </div>
+
+    <figure class="phero">
+      <img id="pImg" src="" alt="" />
+    </figure>
+
+    <div class="wrap pbody-grid">
+      <div class="pbody">
+        <p id="pBody"></p>
+        <p class="pnote" id="pNote"></p>
+      </div>
+      <dl class="pspecs">
+        <div><dt data-i18n="pd.cat">Κατηγορία</dt><dd id="pCat">—</dd></div>
+        <div><dt data-i18n="pd.loc">Τοποθεσία</dt><dd id="pLoc2">—</dd></div>
+        <div><dt data-i18n="pd.status">Κατάσταση</dt><dd id="pStatus">—</dd></div>
+        <div><dt data-i18n="pd.year">Παράδοση</dt><dd id="pYear">—</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="pphotos">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="pd.gallery">Φωτογραφίες</p>
+      <div class="pgallery" id="pgallery"></div>
+      <p class="pzoom-hint" data-i18n="pd.zoom">Πατήστε σε μια φωτογραφία για μεγέθυνση</p>
+    </div>
+  </section>
+
+  <section id="pn">
+    <div class="wrap">
+      <nav class="pnav">
+        <a class="prev" id="pPrev" href="index.html#projects">
+          <span class="lbl" data-i18n="pd.prev">Προηγούμενο έργο</span>
+          <b>—</b>
+        </a>
+        <a class="next" id="pNext" href="index.html#projects">
+          <span class="lbl" data-i18n="pd.next">Επόμενο έργο</span>
+          <b>—</b>
+        </a>
+      </nav>
+      <div style="text-align:center; margin-top:56px">
+        <a class="btn btn-primary" href="index.html#contact" data-i18n="pd.cta">Ζητήστε προσφορά για το έργο σας</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo"><img src="assets/cps-lockup.png" alt="C.P.S — Complete Project Solutions" /></div>
+        <p class="muted" style="margin-top:16px; font-size:13.6px; max-width:34ch" data-i18n="ft.tag">Μελέτη, κατασκευή και διαχείριση έργων. Real Estate Development &amp; Interior Design.</p>
+      </div>
+      <div>
+        <h4 data-i18n="ft.nav">Πλοήγηση</h4>
+        <a href="company.html" data-i18n="nav.company">Η Επιχείρηση</a>
+        <a href="services.html" data-i18n="nav.services">Υπηρεσίες</a>
+        <a href="index.html#projects" data-i18n="nav.projects">Έργα</a>
+        <a href="contact.html" data-i18n="nav.contact">Επικοινωνία</a>
+      </div>
+      <div>
+        <h4 data-i18n="ft.contact">Επικοινωνία</h4>
+        <a href="tel:+302410538740">2410 538740</a>
+        <a href="mailto:nickatsiouras@yahoo.gr">nickatsiouras@yahoo.gr</a>
+        <a href="index.html#contact" data-i18n="ft.city">Λάρισα, Ελλάδα</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span data-i18n="ft.rights">© 2026 C.P.S — Complete Project Solutions. Όλα τα δικαιώματα διατηρούνται.</span>
+      <span>
+        <span data-i18n="ft.reg">Γ.Ε.ΜΗ. 000000000000</span> &nbsp;·&nbsp;
+        <a href="#" data-i18n="ft.cookies">Πολιτική Cookies</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/cps-data.js?v=20260921c"></script>
+<script src="assets/cps.js?v=20260921c"></script>
+</body>
+</html>

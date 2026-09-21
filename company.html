@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Η Επιχείρηση — C.P.S | Complete Project Solutions</title>
+<meta name="description" content="Η C.P.S – Complete Project Solutions ιδρύθηκε στη Λάρισα το 2002 από μηχανικούς με εμπειρία στη μελέτη, κατασκευή και διαχείριση έργων." />
+<meta name="theme-color" content="#ffffff" />
+<link rel="icon" href="assets/cps-wordmark.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<script>/* ── REFRESH = πάντα από την αρχή (hero) ──
+   Ξεχωρίζει το refresh από το κλικ σε anchor:
+   - refresh/revisit  → αγνοεί το #section και ξεκινά από το hero
+   - κανονική πλοήγηση (κλικ σε link) → σέβεται το #section */
+(function(){
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  document.documentElement.classList.add('cps-loading');
+  var t = null;
+  try { var e = performance.getEntriesByType('navigation')[0]; if (e) t = e.type; } catch (err) {}
+  if (!t && performance.navigation) t = (performance.navigation.type === 1) ? 'reload' : 'navigate';
+  var reload = (t === 'reload');
+  // Σβήνουμε το hash ΠΡΙΝ διαβαστεί το <body>, ώστε ο browser να μη «πηδήξει» στην ενότητα
+  if (reload && location.hash) history.replaceState(null, '', location.pathname + location.search);
+  window.__CPS_RELOAD = reload;
+})();</script>
+<link rel="stylesheet" href="assets/cps.css?v=20260921c" />
+</head>
+<body class="page">
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <img class="loader-logo" src="assets/cps-wordmark.png" alt="C.P.S" />
+    <span class="loader-bar"><i></i></span>
+  </div>
+</div>
+
+<div id="stage" aria-hidden="true">
+  <div id="logo3d">
+    <div class="logo-shadow"></div>
+    <img class="logo-glow" src="assets/wordmark-front.png" alt="" aria-hidden="true" />
+    <img class="logo-layer logo-back" src="assets/wordmark-depth.png" alt="" aria-hidden="true" />
+    <img class="logo-layer logo-front" src="assets/wordmark-front.png" alt="C.P.S — Complete Project Solutions" />
+  </div>
+</div>
+<div class="grid-lines" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="C.P.S">
+      <img src="assets/cps-lockup.png" alt="C.P.S — Complete Project Solutions" />
+    </a>
+    <nav class="links" id="links">
+      <a href="index.html" data-i18n="nav.home">Αρχική</a>
+      <a href="company.html" data-i18n="nav.company">Η Επιχείρηση</a>
+      <a href="services.html" data-i18n="nav.services">Υπηρεσίες</a>
+      <a href="index.html#projects" data-i18n="nav.projects">Έργα</a>
+      <a href="contact.html" data-i18n="nav.contact">Επικοινωνία</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Γλώσσα / Language">
+        <button type="button" data-lang="el" class="on">EL</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a class="btn btn-primary nav-cta" href="contact.html" data-i18n="nav.cta">Ζητήστε προσφορά</a>
+      <div class="social">
+        <!-- ▼▼ ΒΑΛΕ ΕΔΩ ΤΑ ΠΡΑΓΜΑΤΙΚΑ LINKS (facebook / instagram) ▼▼ -->
+        <a href="#" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.87.24-1.46 1.49-1.46h1.59V4.45c-.28-.04-1.22-.12-2.32-.12-2.3 0-3.87 1.4-3.87 3.98V10.5H8.1v3h2.39V21h3.01z"/></svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.1" cy="6.9" r="1.05" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<a class="backtop" data-back href="index.html" aria-label="Πίσω" title="Πίσω" data-i18n-aria="nav.back" data-i18n-title="nav.back">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.6 5.4 8 12l6.6 6.6"/></svg>
+</a>
+
+<main>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">Η Επιχείρηση</p>
+      <h1 data-i18n="co.h2">Μηχανικοί με εμπειρία, από τη μελέτη ως τη διαχείριση του έργου</h1>
+      <p class="co-line" data-i18n="co.line">Πολιτικός Μηχανικός · Διακόσμηση · Ολοκληρωμένες Τεχνικές Λύσεις Έργων</p>
+    </div>
+  </section>
+
+  <section id="statement">
+    <div class="wrap">
+      <p class="stmt-kicker reveal" data-i18n="st.kicker">Οι πελάτες μας περιμένουν</p>
+      <h2 class="stmt reveal" data-i18n="st.big">Το άρτιο</h2>
+      <p class="stmt-sub reveal" data-i18n="st.sub">Αυτό επιδιώκουμε σε κάθε έργο</p>
+    </div>
+  
+
+  <section id="kpi">
+    <div class="wrap">
+      <div class="stats reveal">
+        <div class="stat"><b data-i18n="k1b">Real Estate Development</b><span data-i18n="k1s">Ανάπτυξη &amp; κατασκευή ακινήτων</span></div>
+        <div class="stat"><b data-i18n="k2b">Interior Design</b><span data-i18n="k2s">Σχεδιασμός εσωτερικών χώρων</span></div>
+        <div class="stat"><b data-i18n="k3b">Από το 2002</b><span data-i18n="k3s">Λάρισα · Ομάδα μηχανικών</span></div>
+      </div>
+    </div>
+  
+
+  <section id="company">
+<section id="company">
+    <div class="wrap">
+      <div class="two-col">
+        <div class="reveal">
+          <h2 data-i18n="co.h2">Μηχανικοί με εμπειρία, από τη μελέτη ως τη διαχείριση του έργου</h2>
+          <p class="co-line" data-i18n="co.line">Πολιτικός Μηχανικός · Διακόσμηση · Ολοκληρωμένες Τεχνικές Λύσεις Έργων</p>
+        </div>
+        <div class="reveal">
+          <p data-i18n-html="co.p1">Η <b>C.P.S – Complete Project Solutions</b> ιδρύθηκε στη Λάρισα το 2002 από μία ομάδα μηχανικών με πολυετή εμπειρία στη μελέτη, κατασκευή και διαχείριση έργων, κατοικιών και επαγγελματικών χώρων.</p>
+          <p data-i18n="co.p2">Η εταιρία παρέχει ευρύ φάσμα υπηρεσιών και είναι σε θέση να ικανοποιήσει οποιαδήποτε ανάγκη βασίζεται στην από κοινού με τον πελάτη ανίχνευση και καταγραφή των αναγκών του — τόσο στο στάδιο της μελέτης όσο και κατά τη διάρκεια της κατασκευής.</p>
+          <p class="muted" data-i18n="co.p3">Βασικός μας στόχος είναι η άρτια διεκπεραίωση των έργων, με ευέλικτες οικονομικές προτάσεις και συνέπεια στην παράδοσή τους, εντός των προαπαιτούμενων χρονικών ορίων.</p>
+          <ul class="factors">
+            <li data-i18n="co.f1">Τεχνογνωσία σε νέα δομικά υλικά</li>
+            <li data-i18n="co.f2">Μοντέρνες σχεδιαστικές ιδέες</li>
+            <li data-i18n="co.f3">Σύγχρονη αντίληψη κατασκευαστικών δεδομένων</li>
+            <li data-i18n="co.f4">Ποιότητα κατασκευής</li>
+            <li data-i18n="co.f5">Συλλογική εργασία</li>
+            <li data-i18n="co.f6">Ορθολογική οικονομική διαχείριση</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo"><img src="assets/cps-lockup.png" alt="C.P.S — Complete Project Solutions" /></div>
+        <p class="muted" style="margin-top:16px; font-size:13.6px; max-width:34ch" data-i18n="ft.tag">Μελέτη, κατασκευή και διαχείριση έργων. Real Estate Development &amp; Interior Design.</p>
+      </div>
+      <div>
+        <h4 data-i18n="ft.nav">Πλοήγηση</h4>
+        <a href="company.html" data-i18n="nav.company">Η Επιχείρηση</a>
+        <a href="services.html" data-i18n="nav.services">Υπηρεσίες</a>
+        <a href="index.html#projects" data-i18n="nav.projects">Έργα</a>
+        <a href="contact.html" data-i18n="nav.contact">Επικοινωνία</a>
+      </div>
+      <div>
+        <h4 data-i18n="ft.contact">Επικοινωνία</h4>
+        <a href="tel:+302410538740">2410 538740</a>
+        <a href="mailto:nickatsiouras@yahoo.gr">nickatsiouras@yahoo.gr</a>
+        <a href="contact.html" data-i18n="ft.city">Λάρισα, Ελλάδα</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span data-i18n="ft.rights">© 2026 C.P.S — Complete Project Solutions. Όλα τα δικαιώματα διατηρούνται.</span>
+      <span>
+        <span data-i18n="ft.reg">Γ.Ε.ΜΗ. 000000000000</span> &nbsp;·&nbsp;
+        <a href="#" data-i18n="ft.cookies">Πολιτική Cookies</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/cps-data.js?v=20260921c"></script>
+<script src="assets/cps.js?v=20260921c"></script>
+</body>
+</html>
