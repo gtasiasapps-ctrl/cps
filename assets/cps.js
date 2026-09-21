@@ -125,7 +125,7 @@ function setLang(l){
    Αν κάτι δεν είναι ρυθμισμένο, η φόρμα πέφτει στο mailto:
    (ανοίγει το πρόγραμμα email του επισκέπτη), όπως πριν.
    ══════════════════════════════════════════════════════════ */
-const CONTACT_EMAIL = 'nickatsiouras@yahoo.gr';
+const CONTACT_EMAIL = 'cps.redea@gmail.com';
 const FORM = {
   provider: 'formsubmit',      // 'formsubmit' (χωρίς key) | 'web3forms' | 'formspree'
   to: CONTACT_EMAIL,           // πού πάνε τα email

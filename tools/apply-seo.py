@@ -12,7 +12,7 @@ import json, pathlib, re
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://cps-solutions.gr"
 PHONE = "+302410538740"
-MAIL = "nickatsiouras@yahoo.gr"
+MAIL = "cps.redea@gmail.com"
 OG_IMG = f"{SITE}/assets/og-image.jpg"
 KEYS = ("πολιτικός μηχανικός Λάρισα, μελέτη και κατασκευή έργων Λάρισα, οικοδομική άδεια Λάρισα, "
         "ανακαίνιση Λάρισα, διακόσμηση εσωτερικών χώρων Λάρισα, interior design Λάρισα, "
@@ -50,7 +50,7 @@ PAGES = {
     "contact.html": dict(
         title="Επικοινωνία | C.P.S Λάρισα – 2410 538740",
         desc="Κουμουνδούρου Αλέξανδρου 24, Άγιος Νικόλαος, Λάρισα · Τηλ. 2410 538740 · "
-             "nickatsiouras@yahoo.gr · Δευ–Παρ 09:00–17:00. Στείλτε το αίτημά σας.",
+             "cps.redea@gmail.com · Δευ–Παρ 09:00–17:00. Στείλτε το αίτημά σας.",
         og="Επικοινωνία — C.P.S Λάρισα",
         ogd="Κουμουνδούρου Αλέξανδρου 24, Άγιος Νικόλαος, Λάρισα · 2410 538740 · Δευ–Παρ 09:00–17:00.",
         crumb=[("Αρχική", "/"), ("Επικοινωνία", "/contact.html")],
