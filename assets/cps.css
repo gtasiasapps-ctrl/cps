@@ -35,6 +35,12 @@
     will-change:opacity, transform;
     animation:stageIn 1.6s ease .2s backwards;
   }
+  /* Εσωτερικές σελίδες (όχι η αρχική): το 3D λογότυπο fixed στο ΚΕΝΤΡΟ */
+  body[data-stage="center"] #stage{
+    place-items:center;
+    padding-left:0;
+    perspective-origin:50% 50%;
+  }
   @keyframes stageIn{ from{opacity:0} to{opacity:var(--stage-max,.9)} }
   @media (prefers-reduced-motion: reduce){ #stage{animation:none} }
   #logo3d{

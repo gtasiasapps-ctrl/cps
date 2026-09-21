@@ -174,6 +174,8 @@ async function postForm(data){
   const stage = document.getElementById('stage');
   const logo  = document.getElementById('logo3d');
   if (!stage || !logo) return;
+  // Εσωτερικές σελίδες: λογότυπο FIXED στο κέντρο (χωρίς grow/zoom/μετατόπιση)
+  const centered = document.body.dataset.stage === 'center';
 
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const LAYERS = reduce ? 1 : 22;
@@ -235,9 +237,9 @@ async function postForm(data){
 
   function onScroll(){
     const y = window.scrollY || document.documentElement.scrollTop || 0;
-    grow = Math.min(1, Math.max(0, y / GROW_AT));
+    grow = centered ? 0 : Math.min(1, Math.max(0, y / GROW_AT));
     fade = y <= 700 ? 1 : Math.max(0.10, 1 - (y - 700) / 800);
-    scrollZ = Math.min(240, y * 0.16);
+    scrollZ = centered ? 0 : Math.min(240, y * 0.16);
   }
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
@@ -263,7 +265,7 @@ async function postForm(data){
 
     const floatY = reduce ? 0 : Math.sin(ts * 0.00072) * 7;
     const s = 1 + curGrow * (window.innerWidth < 860 ? 0.35 : 0.72);
-    const shift = dx(curScrollZ) * curGrow;
+    const shift = centered ? 0 : dx(curScrollZ) * curGrow;
     logo.style.transform =
       `translate3d(${(px + shift).toFixed(2)}px, ${(py + floatY).toFixed(2)}px, ${(-curScrollZ).toFixed(1)}px) ` +
       `rotateX(${cx.toFixed(2)}deg) rotateY(${cy.toFixed(2)}deg) scale(${s.toFixed(3)})`;
