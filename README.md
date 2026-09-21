@@ -27,7 +27,7 @@ cps/
 ├── assets/
 │   ├── cps.css             όλα τα styles (όλων των σελίδων)
 │   ├── cps-data.js         I18N (EL/EN) + PROJECTS + CAROUSEL   ← εδώ δηλώνεις
-│   ├── cps.js              κοινό script (loader, 3D logo, carousel, nav, i18n, grid, lightbox)
+│   ├── cps.js              κοινό script (loader, carousel, nav, i18n, φόρμα, lightbox)
 │   ├── cps-lockup.png · cps-wordmark.png · wordmark-front.png · wordmark-depth.png
 ├── tools/
 │   ├── new-project.sh      ← δημιουργεί φάκελο νέου έργου + snippet
@@ -37,19 +37,15 @@ cps/
 
 ## Hero
 
-- **Χωρίς κείμενο/κουμπιά/τίτλους.** Αριστερά: το 3D λογότυπο (με gutter `clamp(22px,3.4vw,52px)`).
-  Δεξιά: **carousel έργων**, ακριβώς το δεξί μισό (φτάνει μέχρι τη δεξιά και την κάτω άκρη).
+- **Full-screen carousel φωτογραφιών** (`#hero` → `height:100svh`, `.hero-carousel` γεμίζει,
+  `object-fit:cover`). Χωρίς κείμενο/κουμπιά/τίτλους, χωρίς λογότυπο από πίσω.
 - Οι εικόνες είναι **σκέτες** — χωρίς πλαίσιο, border, radius, σκιά ή κείμενο από πάνω.
 - Carousel: **παίζει πάντα** (ακόμα κι αν το σύστημα έχει «Reduce Motion» — τότε χωρίς zoom),
   crossfade 1,15s + αργό Ken Burns, αλλαγή κάθε 4,6s, pause στο hover, swipe σε touch,
   pause όταν το tab είναι κρυφό. (Χωρίς dots.)
-- **Scroll effect του λογότυπου:** όσο κατεβαίνεις, το 3D λογότυπο **μεγαλώνει και
-  μετακινείται στο κέντρο** (0 → 1 στα πρώτα 620px scroll)· ανεβαίνοντας **επιστρέφει**
-  αριστερά. Μετά το hero ξεθωριάζει ως ~10% για να μη χαλάει την ανάγνωση.
-  Σταθερές: `GROW_AT`, `scale = 1 + grow*0.72` στο `<script>`.
-  Το κέντρο υπολογίζεται με **αντιστάθμιση της προοπτικής** (`dx(z)`) και η κλίση
-  **dampάρει** όσο μεγαλώνει (`damp = 1 - grow*0.75`) ώστε να κάθεται σταθερό στο κέντρο.
-- Τα έργα βγαίνουν από τον πίνακα `PROJECTS` (top of `<script>`) — **ίδιος πίνακας**
+- **Στο κάτω μέρος** υπάρχει απαλό λευκό gradient (`::after`) για ομαλή μετάβαση στην επόμενη ενότητα.
+
+- Τα έργα βγαίνουν από τον πίνακα `PROJECTS` (`assets/cps-data.js`) — **ίδιος πίνακας**
   τροφοδοτεί και το grid της ενότητας «Έργα».
 - Navbar: **full-bleed** — lockup **τέρμα αριστερά**, links **απόλυτα κεντραρισμένα**,
   **EL / EN** δεξιά (+ CTA, κρύβεται <1080px).
@@ -58,7 +54,7 @@ cps/
 
 | Σελίδα | Περιεχόμενο |
 |---|---|
-| **index.html** | **Μόνο** hero (3D λογότυπο + carousel) και **Επερχόμενα έργα** (φίλτρα + grid + λίστα) |
+| **index.html** | **Μόνο** hero (full-screen carousel φωτογραφιών) και **Επερχόμενα έργα** (φίλτρα + grid + λίστα) |
 | **company.html** | Η Επιχείρηση: statement («ΤΟ ΑΡΤΙΟ»), KPI, κείμενο εταιρίας + 6 παράγοντες |
 | **services.html** | Οι 3 υπηρεσίες + CTA προς επικοινωνία |
 | **contact.html** | Στοιχεία επικοινωνίας, φόρμα, newsletter |
@@ -72,7 +68,7 @@ cps/
 χωρίς εξωτερικές βιβλιοθήκες) — μετά το CTA και πριν το burger (mobile).
 
 Οι **εσωτερικές σελίδες** έχουν `class="page"` στο `<body>` → `body.page::before` απλώνει
-ένα λευκό gradient στην κορυφή ώστε οι τίτλοι να μένουν καθαροί πάνω από το 3D λογότυπο.
+ένα λευκό gradient στην κορυφή ώστε οι τίτλοι να μένουν καθαροί.
 
 ### Πηγές εικόνων
 
@@ -80,18 +76,16 @@ cps/
 Παράγονται από το `tools/make-demos.py` (demo). Αντικατέστησέ τες με πραγματικές φωτό
 μέσα στον ίδιο φάκελο, με τα ίδια ονόματα → μηδέν αλλαγές στον κώδικα.
 
-## Το 3D interactive λογότυπο
+## Το 3D λογότυπο (ιστορικό)
 
-- **Fixed layer πίσω από το περιεχόμενο** (`#stage`, `z-index:0`, `pointer-events:none`)
-  → δεν μπλοκάρει κλικ/nav/φόρμες. **Τέρμα αριστερά**, στο ύψος του hero.
-- **22 στοιβαγμένα layers** σε διαφορετικό `translateZ` → πάχος/όγκος (extrusion).
-- Interaction: `pointermove` (tilt + parallax), `deviceorientation` (gyro σε κινητό),
-  auto-rotation μετά από ~3,2s αδράνειας, scroll fade (→ ~10%) ώστε να μη χαλάει
-  την ανάγνωση των επόμενων ενοτήτων, μικρό «boost» όταν κινείς τον δείκτη.
-- Όγκος: `.logo-shadow` (απαλή σκιά) + `drop-shadow` pulse.
-- `prefers-reduced-motion` → χωρίς animation, μειωμένο πάχος.
+**Αφαιρέθηκε ολοσχερώς (21/09 20:20)** — δεν υπάρχει πια background λογότυπο:
+χωρίς `#stage` / `#logo3d`, χωρίς το αντίστοιχο IIFE στο `cps.js`, χωρίς τα CSS rules.
 
-Ρυθμίσεις στο 1ο `<script>`: `LAYERS`, `DEPTH`, `BASE` (ένταση).
+Γιατί: το λογότυπο στο background δεν χρειάζεται πια — η αρχική γίνεται full-screen
+φωτογραφικό carousel, και οι εσωτερικές σελίδες καθαρές με λευκό gradient.
+
+Τα assets `assets/wordmark-front.png` / `wordmark-depth.png` μένουν στο repo (χρήσιμα
+αν ποτέ ξαναμπεί 3D mark, π.χ. στο loader).
 
 ## Γλώσσα (EL / EN)
 
@@ -159,7 +153,8 @@ Grid, λίστα, carousel, φίλτρα **και** η σελίδα του έρ�
 
 ## Loader (πρώτη φόρτωση)
 
-Overlay με **λευκό φόντο + το λογότυπο (wordmark) + λεπτή γραμμή προόδου**, που
+Overlay με **λευκό φόντο + τα δύο λόγκο (C.P.S wordmark **δίπλα-δίπλα** με το lockup,
+χωρισμένα με λεπτή κάθετη γραμμή) + λεπτή γραμμή προόδου**, που
 εξαφανίζεται με fade μόλις φορτώσει η σελίδα. Υπάρχει σε **index.html** και **project.html**.
 
 - Markup: `<div class="loader" id="loader">` στην αρχή του `<body>`
