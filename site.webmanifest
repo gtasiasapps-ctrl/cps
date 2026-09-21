@@ -1,0 +1,28 @@
+{
+  "name": "C.P.S – Complete Project Solutions",
+  "short_name": "C.P.S",
+  "description": "Πολιτικός μηχανικός, διακόσμηση και ολοκληρωμένες τεχνικές λύσεις έργων. Λάρισα, από το 2002.",
+  "lang": "el",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/assets/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

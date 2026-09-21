@@ -1,0 +1,8 @@
+# C.P.S – Complete Project Solutions — https://cps-solutions.gr
+User-agent: *
+Allow: /
+Disallow: /preview/
+Disallow: /tools/
+Disallow: /*.py$
+
+Sitemap: https://cps-solutions.gr/sitemap.xml

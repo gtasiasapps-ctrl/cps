@@ -49,7 +49,43 @@
    Απαιτεί: assets/cps-data.js (I18N, PROJECTS)
    ══════════════════════════════════════════════════════════ */
 let LANG = (localStorage.getItem('cps-lang') === 'en') ? 'en' : 'el';
+// ?lang=en / ?lang=el στο URL (για hreflang + shareable links) — κερδίζει του localStorage
+(function(){
+  const q = new URLSearchParams(location.search).get('lang');
+  if (q === 'en' || q === 'el'){ LANG = q; localStorage.setItem('cps-lang', q); }
+})();
 const t = k => (I18N[LANG] && I18N[LANG][k] != null) ? I18N[LANG][k] : k;
+
+/* ─────────── SEO: δυναμικά canonical / OG / hreflang ─────────── */
+const SITE_URL = 'https://cps-solutions.gr';
+const pageFile = () => (location.pathname.split('/').pop() || 'index.html');
+const isProjectPage = () => pageFile().indexOf('project.html') === 0;
+function currentSlug(){
+  if (!isProjectPage() || typeof PROJECTS === 'undefined' || !PROJECTS.length) return null;
+  const s = new URLSearchParams(location.search).get('p');
+  return PROJECTS.some(p => p.slug === s) ? s : PROJECTS[0].slug;
+}
+function pageUrl(slug){
+  const f = pageFile();
+  const base = SITE_URL + '/' + (f === 'index.html' ? '' : f);
+  const q = [];
+  if (slug) q.push('p=' + encodeURIComponent(slug));
+  if (LANG === 'en') q.push('lang=en');
+  return base + (q.length ? '?' + q.join('&') : '');
+}
+function syncMeta(slug){
+  const url = pageUrl(slug);
+  const el = document.querySelector('link[rel="canonical"]'); if (el) el.href = url;
+  const og = document.querySelector('meta[property="og:url"]'); if (og) og.setAttribute('content', url);
+  const loc = document.querySelector('meta[property="og:locale"]'); if (loc) loc.setAttribute('content', LANG === 'en' ? 'en_US' : 'el_GR');
+  const alt = document.querySelector('meta[property="og:locale:alternate"]'); if (alt) alt.setAttribute('content', LANG === 'en' ? 'el_GR' : 'en_US');
+  const base = SITE_URL + '/' + (pageFile() === 'index.html' ? '' : pageFile());
+  const q = slug ? '?p=' + encodeURIComponent(slug) : '';
+  document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(l=>{
+    const h = l.getAttribute('hreflang');
+    l.href = h === 'en' ? base + q + (q ? '&' : '?') + 'lang=en' : base + q;
+  });
+}
 
 function applyI18n(){
   document.documentElement.lang = LANG;
@@ -59,6 +95,7 @@ function applyI18n(){
   document.querySelectorAll('[data-i18n-aria]').forEach(el=>{ el.setAttribute('aria-label', t(el.dataset.i18nAria)); });
   document.querySelectorAll('[data-i18n-title]').forEach(el=>{ el.setAttribute('title', t(el.dataset.i18nTitle)); });
   document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on', b.dataset.lang === LANG));
+  if (typeof syncMeta === 'function') syncMeta(currentSlug());
 }
 
 function setLang(l){
@@ -448,6 +485,50 @@ let renderProject = null;
     const next = PROJECTS[(i + 1) % PROJECTS.length];
 
     document.title = `${L.title} — ${L.loc} | C.P.S`;
+
+    // ── SEO: meta + structured data ανά έργο ──
+    (function(){
+      const canon = pageUrl(p.slug);
+      const img   = SITE_URL + '/' + coverOf(p);
+      const desc  = LANG === 'en'
+        ? `${L.title} (${L.tag}) — ${L.loc}. A project by C.P.S – Complete Project Solutions: design, construction and project management in Larissa, Greece.`
+        : `${L.title} (${L.tag}) — ${L.loc}. Έργο της C.P.S – Complete Project Solutions: μελέτη, κατασκευή και διαχείριση έργων στη Λάρισα.`;
+      const setM = (sel, val) => { const el = document.querySelector(sel); if (el) el.setAttribute('content', val); };
+      setM('meta[name="description"]', desc);
+      setM('meta[property="og:title"]', `${L.title} — ${L.loc} | C.P.S`);
+      setM('meta[property="og:description"]', desc);
+      setM('meta[property="og:image"]', img);
+      setM('meta[name="twitter:title"]', `${L.title} — ${L.loc} | C.P.S`);
+      setM('meta[name="twitter:description"]', desc);
+      setM('meta[name="twitter:image"]', img);
+      syncMeta(p.slug);
+
+      let ld = document.getElementById('ld-project');
+      if (!ld){
+        ld = document.createElement('script');
+        ld.type = 'application/ld+json'; ld.id = 'ld-project';
+        document.head.appendChild(ld);
+      }
+      ld.textContent = JSON.stringify({
+        '@context': 'https://schema.org', '@type': 'ItemPage',
+        'url': canon, 'name': `${L.title} — ${L.loc}`, 'inLanguage': LANG,
+        'isPartOf': { '@id': SITE_URL + '/#website' },
+        'primaryImageOfPage': { '@type': 'ImageObject', 'url': img },
+        'about': { '@type': 'Service', 'name': L.title, 'description': desc,
+                   'provider': { '@id': SITE_URL + '/#business' },
+                   'areaServed': { '@type': 'City', 'name': L.loc } }
+      }, null, 2);
+
+      const bc = document.getElementById('ld-crumbs');
+      if (bc) bc.textContent = JSON.stringify({
+        '@context': 'https://schema.org', '@type': 'BreadcrumbList', 'inLanguage': LANG,
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': t('nav.home'), 'item': SITE_URL + '/' },
+          { '@type': 'ListItem', 'position': 2, 'name': t('nav.projects'), 'item': SITE_URL + '/#projects' },
+          { '@type': 'ListItem', 'position': 3, 'name': L.title, 'item': canon }
+        ]
+      }, null, 2);
+    })();
 
     const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
     set('pTag', L.tag);

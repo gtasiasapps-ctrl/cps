@@ -216,6 +216,37 @@ const FORM = {
 Το ίδιο config τροφοδοτεί και τη **Newsletter**. Αν `key`/`to` λείπουν, η φόρμα
 λειτουργεί όπως παλιά (μόνο `mailto:`).
 
+## SEO (όπως στο newfoundland project)
+
+Όλες οι σελίδες έχουν πλήρες SEO block στο `<head>` (marker `<!-- SEO:auto -->`):
+
+- **Title / description / keywords** γραμμένα ανά σελίδα (ελληνικά, με όρους που ψάχνει ο κόσμος:
+  «πολιτικός μηχανικός Λάρισα», «οικοδομική άδεια», «interior design Λάρισα»…)
+- **canonical** + **hreflang** `el` / `en` / `x-default` (`?lang=en`) + `og:locale`
+- **geo meta** (`geo.region GR-42`, `geo.position`, `ICBM`) για τοπικό SEO στη Λάρισα
+- **Open Graph + Twitter card** με `og-image.jpg` 1200×630
+- **Favicon set** (`.ico`, 32/96/192/512, apple-touch) — φτιαγμένα από το πραγματικό C.P.S λογότυπο
+  με `tools/make-seo-assets.py`
+- **JSON-LD** σε κάθε σελίδα: `GeneralContractor` (διεύθυνση, τηλ., ωράριο, `hasOfferCatalog`),
+  `WebSite`, `BreadcrumbList` + `AboutPage` / `ContactPage`
+  · στη `services.html` και `ItemList` + **`FAQPage`** (6 ερωτήσεις, και στα δύο site)
+  · στις σελίδες έργων δυναμικό `ItemPage` + breadcrumb 3 επιπέδων (το φτιάχνει το `cps.js`)
+- **`robots.txt`** (αποκλείει `/preview/`, `/tools/`), **`sitemap.xml`** (16 URLs: 5 σελίδες + 12 έργα),
+  **`404.html`** (styled, noindex), **`site.webmanifest`**
+
+**Δύο ρυθμίσεις που αλλάζουν εύκολα:**
+- Το domain είναι δηλωμένο ως `SITE_URL` στην κορυφή του `assets/cps.js` **και** στα canonical των HTML.
+  Αλλαγή domain ⇒ 2 σημεία (script `tools/apply-seo.py` ξαναπερνάει τα heads).
+- `google-site-verification` στο `<head>` είναι **κενό** → βάλε τον κωδικό από το Search Console
+  (μετά την προσθήκη του `https://cps-solutions.gr` ως property).
+
+**Μετά το «ανέβασμα» του domain — checklist:**
+1. Google Search Console → add property `https://cps-solutions.gr` → verify (meta tag) → submit `sitemap.xml`
+2. Bing Webmaster Tools (ίδιο sitemap)
+3. Google Business Profile (χάρτης/αξιολογήσεις) — το `geo`/`LocalBusiness` schema συνεργάζεται με αυτό
+4. Όταν υπάρχουν πραγματικά έργα/φωτογραφίες, ανανεώνεται το `PROJECTS` (τα URLs του sitemap
+   βγαίνουν από εκεί — ξανατρέξε `tools/apply-seo.py` μόνο αν αλλάξεις λίστα έργων)
+
 ## Τι μένει να συμπληρωθεί
 
 - [x] **Διεύθυνση / τηλέφωνο** — ✅ Κουμουνδούρου Αλέξανδρου 24, Άγιος Νικόλαος, Λάρισα · **2410 538740**

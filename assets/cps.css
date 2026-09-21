@@ -556,3 +556,21 @@ body.page::before{
   .backtop svg{ width:17px; height:17px }
   .page-head{ padding-top:calc(var(--nav-h) + 64px) }
 }
+
+/* ═══════════ FAQ (services.html) ═══════════ */
+#faq{padding-top:0}
+.faq{max-width:900px; margin:34px auto 0; border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{
+  cursor:pointer; list-style:none; padding:20px 0; display:flex; align-items:center; justify-content:space-between;
+  gap:20px; font-size:1.02rem; font-weight:600; color:var(--ink); transition:padding .2s ease;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+"; font-size:19px; line-height:1; color:var(--muted); transition:opacity .2s}
+.faq-item[open] summary::after{content:"–"}
+.faq-item summary:hover{padding-left:8px}
+.faq-item p{margin:0 0 22px; color:var(--muted); font-size:14.8px; max-width:74ch}
+@media (max-width:720px){
+  .faq-item summary{font-size:.97rem; padding:17px 0}
+  .faq-item summary:hover{padding-left:0}
+}
