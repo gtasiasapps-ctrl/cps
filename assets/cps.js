@@ -181,38 +181,56 @@ let carouselGo = null, carouselRestart = null;
   const slidesEl = document.getElementById('slides');
   if (!slidesEl) return;
 
-  // Πηγή: ο φάκελος carousel/ — αν είναι κενός, πέφτει στις καρτέλες των έργων
-  const SLIDES = (typeof CAROUSEL !== 'undefined' && CAROUSEL.length)
-    ? CAROUSEL.map(f => ({ src: 'carousel/' + f, project: null }))
+  // 1ο slide = το λογότυπο (πάντα πρώτο) → μετά οι φωτογραφίες του carousel/
+  // (αν ο πίνακας CAROUSEL είναι άδειος: οι καρτέλες των έργων)
+  const LOGO_SRC = (typeof CAROUSEL_LOGO !== 'undefined' && CAROUSEL_LOGO) ? 'carousel/' + CAROUSEL_LOGO : null;
+  const REST = (typeof CAROUSEL !== 'undefined' && CAROUSEL.length)
+    ? CAROUSEL.filter(f => f !== CAROUSEL_LOGO).map(f => ({ src: 'carousel/' + f, project: null }))
     : PROJECTS.map(p => ({ src: coverOf(p), project: p }));
+  const SLIDES = (LOGO_SRC ? [{ src: LOGO_SRC, logo: true, project: null }] : []).concat(REST);
 
   const N = SLIDES.length;
   if (!N) return;
 
   slidesEl.innerHTML = SLIDES.map((s,i)=>`
-    <figure class="slide${i===0?' is-active':''}">
-      <img src="${s.src}" alt="" ${i<2?'':'loading="lazy"'} />
+    <figure class="slide${i===0?' is-active':''}${s.logo?' is-logo':''}">
+      <img src="${s.src}" alt="${s.logo ? 'C.P.S — Complete Project Solutions' : ''}" ${i<2?'':'loading="lazy"'} />
     </figure>`).join('');
 
   const slides = [...slidesEl.children];
   let cur = 0, timer = null, paused = false;
+  // Το λογότυπο παίζει ΜΟΝΟ στην αρχή· μετά ο κύκλος συνεχίζει με τις φωτογραφίες
+  const hasLogo = !!(SLIDES[0] && SLIDES[0].logo && N > 1);
+  let from = 0;
 
   function alts(){
     slides.forEach((s,i)=>{
+      if (SLIDES[i].logo) return;                 // το λογότυπο κρατά το alt του
       const pr = SLIDES[i].project;
       s.querySelector('img').alt = pr ? (pr[LANG].title + ' — ' + pr[LANG].loc) : '';
     });
   }
   function go(i){
-    i = ((i % N) + N) % N;
+    if (i > N - 1) i = from;                    // wrap-around → αρχή του κύκλου
+    if (i < 0)     i = N - 1;
     slides[cur].classList.remove('is-active');
     cur = i;
     slides[cur].classList.add('is-active');
     alts();
+    if (hasLogo && i > 0) from = 1;             // από 'δω και πέρα όχι ξανά λογότυπο
   }
-  function start(){ if (timer) return; timer = setInterval(()=>{ if(!paused && !document.hidden) go(cur+1); }, 4600); }
-  function stop(){ clearInterval(timer); timer = null; }
-  carouselGo = go; carouselRestart = ()=>{ stop(); start(); };
+  // Το slide του λογοτύπου μένει λίγο παραπάνω στην οθόνη
+  const DUR = i => (SLIDES[i] && SLIDES[i].logo ? 6500 : 4600);
+  function tickNext(){
+    timer = setTimeout(()=>{
+      if (!paused && !document.hidden) go(cur + 1);
+      tickNext();
+    }, DUR(cur));
+  }
+  function start(){ if (timer) return; tickNext(); }
+  function stop(){ clearTimeout(timer); timer = null; }
+  carouselGo = i => go(from + i);               // το 0 = «αρχή κύκλου» (μετά το splash: 1η φωτογραφία)
+  carouselRestart = ()=>{ stop(); start(); };
 
   const car = document.getElementById('carousel');
   car.addEventListener('mouseenter', ()=> paused = true);

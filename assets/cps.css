@@ -187,6 +187,12 @@ body.page::before{
   .slide.is-active{opacity:1}
   .slide img{width:100%; height:100%; object-fit:cover; transform:scale(1.06); transition:transform 8s linear}
   .slide.is-active img{transform:scale(1)}
+  /* Πρώτο slide: το λογότυπο — λευκό φόντο, κεντραρισμένο, χωρίς zoom */
+  .slide.is-logo{background:#fff; display:grid; place-items:center}
+  .slide.is-logo img,
+  .slide.is-logo.is-active img{
+    width:min(54vw,680px); height:auto; object-fit:contain; transform:none; transition:none;
+  }
   .reduce-motion .slide{transition:opacity .5s ease}
   .reduce-motion .slide img{transform:none; transition:none}
 
@@ -356,6 +362,8 @@ body.page::before{
     #hero{height:100svh; min-height:480px}
     .hero-carousel{height:100%}
     .hero-carousel::after{height:14%}
+    .slide.is-logo img,
+    .slide.is-logo.is-active img{width:min(80vw,460px)}
     #kpi{padding-bottom:70px}
   }
   @media (max-width:720px){
