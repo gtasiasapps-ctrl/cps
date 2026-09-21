@@ -214,6 +214,12 @@ const FORM = {
 - **`formspree`** — https://formspree.io → φτιάξε form → `provider:'formspree'`, `key:'το-id'`.
   Δωρεάν **μόνο 50/μήνα** (για testing)· μετά **$15/μήνα** (Personal). Έχει dashboard/ιστορικό.
 
+**Σπαμ:** τα email της φόρμας έρχονται από το domain του provider (`formsubmit.co`),
+όχι από το `cps-solutions.gr` → στο Gmail μπορεί να πάνε στα **Spam** την πρώτη φορά.
+Fix: άνοιξε το email → **«Δεν είναι ανεπιθύμητο»**, και μετά φίλτρο: Gmail → Ρυθμίσεις →
+Φίλτρα → «Δημιουργία φίλτρου» → From: `formsubmit.co` → τικ **«Να μην αποστέλλεται ποτέ στα Spam»**.
+Πρόσθεσε και το `formsubmit.co` στις Επαφές.
+
 **Αλυσίδα αποστολής (fallback):** δοκιμάζει πρώτα τον `provider` και, αν αποτύχει
 (π.χ. CORS/δίκτυο/Cloudflare), δοκιμάζει τον `fallback`· αν αποτύχουν και οι δύο → μήνυμα
 σφάλματος + `mailto:`.
