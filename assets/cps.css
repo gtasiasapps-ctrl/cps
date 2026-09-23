@@ -191,7 +191,7 @@ body.page::before{
   .slide.is-logo{background:#fff; display:grid; place-items:center}
   .slide.is-logo img,
   .slide.is-logo.is-active img{
-    width:min(54vw,680px); height:auto; object-fit:contain; transform:none; transition:none;
+    width:min(60vw,780px); height:auto; object-fit:contain; transform:none; transition:none;
   }
   .reduce-motion .slide{transition:opacity .4s ease}
   .reduce-motion .slide img{transform:none; transition:none}
@@ -350,7 +350,7 @@ body.page::before{
     .hero-carousel{height:100%}
     .hero-carousel::after{height:14%}
     .slide.is-logo img,
-    .slide.is-logo.is-active img{width:min(80vw,460px)}
+    .slide.is-logo.is-active img{width:min(86vw,520px)}
     #kpi{padding-bottom:70px}
   }
   @media (max-width:720px){

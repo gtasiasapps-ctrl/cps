@@ -141,7 +141,7 @@ const PROJECTS = [
    • CAROUSEL      : οι υπόλοιπες φωτογραφίες, με τη σειρά που θα παίζουν.
    Άδειο [] → μετά το λογότυπο παίζουν οι καρτέλες των έργων.
    ══════════════════════════════════════════════════════════ */
-const CAROUSEL_LOGO = 'cps-wordmark.png';
+const CAROUSEL_LOGO = 'logo-banner.jpg';
 const CAROUSEL = [
   '01.jpg'
 ];
