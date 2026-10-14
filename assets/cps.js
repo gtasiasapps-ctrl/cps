@@ -214,7 +214,7 @@ let carouselGo = null, carouselRestart = null;
 
   slidesEl.innerHTML = SLIDES.map((s,i)=>`
     <figure class="slide${i===0?' is-active':''}${s.logo?' is-logo':''}">
-      <img src="${s.src}" alt="${s.logo ? 'C.P.S — Complete Project Solutions' : ''}" ${i<2?'':'loading="lazy"'} />
+      <img src="${s.src}" alt="${s.logo ? 'C.P.S — Complete Project Solutions' : ''}" decoding="async" />
     </figure>`).join('');
 
   const slides = [...slidesEl.children];
@@ -239,14 +239,13 @@ let carouselGo = null, carouselRestart = null;
     alts();
     if (hasLogo && i > 0) from = 1;             // από 'δω και πέρα όχι ξανά λογότυπο
   }
-  // Διάρκεια κάθε slide (γρήγορο: 2s το λογότυπο, 1,5s οι φωτογραφίες)
-  const DUR_LOGO = 2000, DUR_SLIDE = 1500;
-  const DUR = i => (SLIDES[i] && SLIDES[i].logo ? DUR_LOGO : DUR_SLIDE);
+  // Διάρκεια slide: ΙΔΙΑ για όλα (logo + φωτογραφίες) → ομοιόμορφος ρυθμός
+  const DUR = 1800;
   function tickNext(){
     timer = setTimeout(()=>{
       if (!paused && !document.hidden) go(cur + 1);
       tickNext();
-    }, DUR(cur));
+    }, DUR);
   }
   function start(){ if (timer) return; tickNext(); }
   function stop(){ clearTimeout(timer); timer = null; }
@@ -355,6 +354,19 @@ let renderProjects = function(){};
         const cap = p[LANG].title + ' — ' + p[LANG].loc;
         const items = photosOf(p).map(src => ({ src, alt: cap, cap }));
         art.querySelectorAll('.up-gallery img').forEach((im, k) => { im.onclick = () => window.openLightbox(items, k); });
+        // αν το βίντεο λείπει/χαλάσει → μπαίνει το poster (χωρίς σπασμένο player)
+        art.querySelectorAll('.up-video video').forEach(v => {
+          const fallback = () => {
+            if (v.dataset.fell) return; v.dataset.fell = '1';
+            const img = document.createElement('img');
+            img.src = v.getAttribute('poster') || '';
+            img.alt = ''; img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block';
+            v.replaceWith(img);
+          };
+          v.addEventListener('error', fallback);
+          const s = v.querySelector('source');
+          if (s) s.addEventListener('error', fallback);
+        });
       });
     }
   };
@@ -482,7 +494,8 @@ let renderProject = null;
     set('pTag', L.tag + (L.type ? ' · ' + L.type : ''));
     set('pTitle', L.title);
     set('pLoc', L.loc);
-    set('pBody', L.body || t('pd.body').replace('{tag}', L.tag).replace('{loc}', L.loc));
+    const pBodyEl = document.getElementById('pBody');
+    if (pBodyEl) pBodyEl.innerHTML = L.body || t('pd.body').replace('{tag}', L.tag).replace('{loc}', L.loc);
     set('pCat', L.tag);
     set('pLoc2', L.loc);
     set('pStatus', t('st.' + p.status));
