@@ -618,3 +618,9 @@ body.page #upcoming-list{ padding-top:calc(var(--nav-h) + 52px) }
   .up-gallery figure{ width:calc(50% - 5px); aspect-ratio:1/1 }
   .proj .cap{ padding:46px 14px 13px }
 }
+
+/* Ορατό μόνο σε screen readers / crawlers — πραγματικό H1 στην αρχική */
+.sr-only{
+  position:absolute !important; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+}

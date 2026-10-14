@@ -4,7 +4,7 @@
    ══════════════════════════════════════════════════════════ */
 const I18N = {
   el: {
-    "nav.home":"Αρχική","nav.company":"Η Επιχείρηση","nav.services":"Υπηρεσίες","nav.projects":"Έργα",
+    "nav.home":"Αρχική","hm.h1":"CPS Solutions Λάρισα — Πολιτικός Μηχανικός: μελέτη, κατασκευή και διαχείριση έργων","nav.company":"Η Επιχείρηση","nav.services":"Υπηρεσίες","nav.projects":"Έργα",
     "nav.upcoming":"Επερχόμενα Έργα",
     "nav.back":"Πίσω","nav.contact":"Επικοινωνία","nav.cta":"Ζητήστε προσφορά","co.line":"Architecture – Engineering – Interior Design – Project Management – Real Estate Development (BREEAM Accredited)",
     "st.kicker":"Οι πελάτες μας περιμένουν","st.big":"Το άρτιο","st.sub":"Αυτό επιδιώκουμε σε κάθε έργο",
@@ -49,7 +49,7 @@ const I18N = {
     "mail.subject":"Αίτημα από το site","mail.name":"Όνομα","mail.phone":"Τηλέφωνο","mail.email":"Email","mail.topic":"Ενδιαφέρον"
   },
   en: {
-    "nav.home":"Home","nav.company":"The Company","nav.services":"Services","nav.projects":"Projects",
+    "nav.home":"Home","hm.h1":"CPS Solutions Larissa — Civil Engineer: design, construction and project management","nav.company":"The Company","nav.services":"Services","nav.projects":"Projects",
     "nav.upcoming":"Upcoming Projects",
     "nav.back":"Back","nav.contact":"Contact","nav.cta":"Request a quote","co.line":"Architecture – Engineering – Interior Design – Project Management – Real Estate Development (BREEAM Accredited)",
     "st.kicker":"Our clients expect","st.big":"The flawless","st.sub":"It is what we strive for in every project",
