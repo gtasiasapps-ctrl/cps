@@ -155,17 +155,17 @@ const ALL_PROJECTS = PROJECTS.concat(UPCOMING);
    CAROUSEL (hero)
    • CAROUSEL_LOGO : το slide του λογοτύπου — παίζει **ΠΑΝΤΑ ΠΡΩΤΟ**
      μόλις μπει κάποιος στο site (δεν μπαίνει στον πίνακα CAROUSEL).
-   • CAROUSEL      : οι υπόλοιπες εικόνες, με τη σειρά που θα παίζουν.
-     Κάθε entry: όνομα μέσα στο `carousel/` (π.χ. '02.jpg') **ή**
-     διαδρομή από τη ρίζα (π.χ. 'projects/onera/cover.jpg').
+   • CAROUSEL      : οι υπόλοιπες εικόνες του φακέλου `carousel/`, με τη σειρά
+     που θα παίζουν (π.χ. '01.jpg' … ). Δέχεται και διαδρομή από τη ρίζα
+     (π.χ. 'projects/onera/cover.jpg'). Πρόσθεσε όσες θες εδώ.
      Άδειο [] → μετά το λογότυπο παίζουν οι καρτέλες των έργων.
    ══════════════════════════════════════════════════════════ */
 const CAROUSEL_LOGO = 'logo-banner.jpg';
 const CAROUSEL = [
-  'projects/onera/cover.jpg',
-  'projects/apartments-giannouli/cover.jpg',
-  'projects/monokatoikia-averof/cover.jpg',
-  'projects/kdap-mazi-mou/cover.jpg',
-  'projects/anakainisi-loutro/cover.jpg',
-  'projects/anakainisi-sofita/cover.jpg'
+  '01.jpg',
+  '02.jpg',
+  '03.jpg',
+  '04.jpg',
+  '05.jpg',
+  '06.jpg'
 ];

@@ -200,10 +200,10 @@ let carouselGo = null, carouselRestart = null;
 
   // 1ο slide = το λογότυπο (πάντα πρώτο) → μετά οι φωτογραφίες του carousel/
   // (αν ο πίνακας CAROUSEL είναι άδειος: οι καρτέλες των έργων)
-  const LOGO_SRC = (typeof CAROUSEL_LOGO !== 'undefined' && CAROUSEL_LOGO) ? 'carousel/' + CAROUSEL_LOGO : null;
+  const LOGO_SRC = (typeof CAROUSEL_LOGO !== 'undefined' && CAROUSEL_LOGO) ? 'carousel/' + encodeURIComponent(CAROUSEL_LOGO) : null;
   // Κάθε entry μπορεί να είναι: όνομα μέσα στο carousel/ (π.χ. '02.jpg')
   // Ή διαδρομή από τη ρίζα του site (π.χ. 'projects/onera/cover.jpg').
-  const carSrc = f => (String(f).indexOf('/') >= 0 ? f : 'carousel/' + f);
+  const carSrc = f => (String(f).indexOf('/') >= 0 ? f : 'carousel/' + encodeURIComponent(f));
   const REST = (typeof CAROUSEL !== 'undefined' && CAROUSEL.length)
     ? CAROUSEL.filter(f => f !== CAROUSEL_LOGO).map(f => ({ src: carSrc(f), project: null }))
     : PROJECTS.map(p => ({ src: coverOf(p), project: p }));
