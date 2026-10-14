@@ -162,7 +162,6 @@ const ALL_PROJECTS = PROJECTS.concat(UPCOMING);
    ══════════════════════════════════════════════════════════ */
 const CAROUSEL_LOGO = 'logo-banner.jpg';
 const CAROUSEL = [
-  'projects/cafe-detox/cover.jpg',
   'projects/onera/cover.jpg',
   'projects/apartments-giannouli/cover.jpg',
   'projects/monokatoikia-averof/cover.jpg',

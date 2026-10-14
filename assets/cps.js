@@ -239,8 +239,8 @@ let carouselGo = null, carouselRestart = null;
     alts();
     if (hasLogo && i > 0) from = 1;             // από 'δω και πέρα όχι ξανά λογότυπο
   }
-  // Διάρκεια κάθε slide (γρήγορο: 4s το λογότυπο, 3s οι φωτογραφίες)
-  const DUR_LOGO = 3000, DUR_SLIDE = 2400;
+  // Διάρκεια κάθε slide (γρήγορο: 2s το λογότυπο, 1,5s οι φωτογραφίες)
+  const DUR_LOGO = 2000, DUR_SLIDE = 1500;
   const DUR = i => (SLIDES[i] && SLIDES[i].logo ? DUR_LOGO : DUR_SLIDE);
   function tickNext(){
     timer = setTimeout(()=>{
