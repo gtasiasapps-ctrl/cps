@@ -343,10 +343,10 @@ let renderProjects = function(){};
   };
 
   renderProjects = function(){
-    if (grid)   grid.innerHTML   = PROJECTS.map(cardHTML).join('');
+    if (grid)   grid.innerHTML   = PROJECTS.map(p => cardHTML(p)).join('');
     if (upGrid) upGrid.innerHTML = UPCOMING.map(p => cardHTML(p, 'upcoming.html#p-' + p.slug)).join('');
     if (upList){
-      upList.innerHTML = UPCOMING.map(featureHTML).join('');
+      upList.innerHTML = UPCOMING.map(p => featureHTML(p)).join('');
       // μεγέθυνση φωτογραφιών κάθε επερχόμενου έργου
       UPCOMING.forEach(p => {
         const art = document.getElementById('p-' + p.slug);
