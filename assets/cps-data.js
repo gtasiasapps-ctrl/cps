@@ -152,13 +152,21 @@ const UPCOMING = [
 const ALL_PROJECTS = PROJECTS.concat(UPCOMING);
 
 /* ══════════════════════════════════════════════════════════
-   CAROUSEL (hero) — φωτογραφίες μέσα στον φάκελο carousel/
+   CAROUSEL (hero)
    • CAROUSEL_LOGO : το slide του λογοτύπου — παίζει **ΠΑΝΤΑ ΠΡΩΤΟ**
      μόλις μπει κάποιος στο site (δεν μπαίνει στον πίνακα CAROUSEL).
-   • CAROUSEL      : οι υπόλοιπες φωτογραφίες, με τη σειρά που θα παίζουν.
-   Άδειο [] → μετά το λογότυπο παίζουν οι καρτέλες των έργων.
+   • CAROUSEL      : οι υπόλοιπες εικόνες, με τη σειρά που θα παίζουν.
+     Κάθε entry: όνομα μέσα στο `carousel/` (π.χ. '02.jpg') **ή**
+     διαδρομή από τη ρίζα (π.χ. 'projects/onera/cover.jpg').
+     Άδειο [] → μετά το λογότυπο παίζουν οι καρτέλες των έργων.
    ══════════════════════════════════════════════════════════ */
 const CAROUSEL_LOGO = 'logo-banner.jpg';
 const CAROUSEL = [
-  '01.jpg'
+  'projects/cafe-detox/cover.jpg',
+  'projects/onera/cover.jpg',
+  'projects/apartments-giannouli/cover.jpg',
+  'projects/monokatoikia-averof/cover.jpg',
+  'projects/kdap-mazi-mou/cover.jpg',
+  'projects/anakainisi-loutro/cover.jpg',
+  'projects/anakainisi-sofita/cover.jpg'
 ];

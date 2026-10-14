@@ -201,8 +201,11 @@ let carouselGo = null, carouselRestart = null;
   // 1ο slide = το λογότυπο (πάντα πρώτο) → μετά οι φωτογραφίες του carousel/
   // (αν ο πίνακας CAROUSEL είναι άδειος: οι καρτέλες των έργων)
   const LOGO_SRC = (typeof CAROUSEL_LOGO !== 'undefined' && CAROUSEL_LOGO) ? 'carousel/' + CAROUSEL_LOGO : null;
+  // Κάθε entry μπορεί να είναι: όνομα μέσα στο carousel/ (π.χ. '02.jpg')
+  // Ή διαδρομή από τη ρίζα του site (π.χ. 'projects/onera/cover.jpg').
+  const carSrc = f => (String(f).indexOf('/') >= 0 ? f : 'carousel/' + f);
   const REST = (typeof CAROUSEL !== 'undefined' && CAROUSEL.length)
-    ? CAROUSEL.filter(f => f !== CAROUSEL_LOGO).map(f => ({ src: 'carousel/' + f, project: null }))
+    ? CAROUSEL.filter(f => f !== CAROUSEL_LOGO).map(f => ({ src: carSrc(f), project: null }))
     : PROJECTS.map(p => ({ src: coverOf(p), project: p }));
   const SLIDES = (LOGO_SRC ? [{ src: LOGO_SRC, logo: true, project: null }] : []).concat(REST);
 
@@ -314,7 +317,6 @@ let renderProjects = function(){};
     const body = L.body || t('pd.body').replace('{tag}', L.tag).replace('{loc}', L.loc);
     const video = p.video ? `
       <div class="wrap">
-        <p class="up-label">${t('up.watch')}</p>
         <figure class="up-video">
           <video controls playsinline preload="metadata" poster="${coverOf(p)}">
             <source src="${p.dir}/${p.video}" type="video/mp4" />
@@ -324,7 +326,6 @@ let renderProjects = function(){};
     const rest = photosOf(p);
     const gallery = rest.length ? `
       <div class="wrap">
-        <p class="up-label">${t('up.gallery')}</p>
         <div class="pgallery up-gallery">${rest.map(f => `<figure><img src="${f}" alt="${cap}" loading="lazy" /></figure>`).join('')}</div>
       </div>` : '';
     return `

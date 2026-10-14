@@ -60,7 +60,7 @@
   if (reload && location.hash) history.replaceState(null, '', location.pathname + location.search);
   window.__CPS_RELOAD = reload;
 })();</script>
-<link rel="stylesheet" href="assets/cps.css?v=20261014" />
+<link rel="stylesheet" href="assets/cps.css?v=20261014b" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -291,15 +291,8 @@
   </section>
 
   <section id="upcoming-home">
-    <div class="wrap">
-      <p class="eyebrow reveal" data-i18n="up.eyebrow">Επερχόμενα Έργα</p>
-      <h2 class="reveal" data-i18n="up.h2">Έργα υπό μελέτη</h2>
-      <p class="muted reveal" style="max-width:62ch" data-i18n="up.note">Έργα που βρίσκονται σε φάση μελέτης ή ανάπτυξης. Παρουσιάζονται με 3D απεικονίσεις και, όπου υπάρχει, βίντεο παρουσίασης.</p>
-      <div class="projects reveal" id="upcoming-grid"></div>
-      <p class="reveal" style="margin-top:34px">
-        <a class="btn btn-ghost" href="upcoming.html" data-i18n="up.all">Όλα τα επερχόμενα έργα</a>
-      </p>
-    </div>
+    <!-- Επερχόμενα έργα: το νεότερο πρώτο (χωρίς τίτλο ενότητας) -->
+    <div id="upcoming-list"></div>
   </section>
 </main>
 
@@ -334,7 +327,7 @@
   </div>
 </footer>
 
-<script src="assets/cps-data.js?v=20261014"></script>
-<script src="assets/cps.js?v=20261014"></script>
+<script src="assets/cps-data.js?v=20261014b"></script>
+<script src="assets/cps.js?v=20261014b"></script>
 </body>
 </html>
