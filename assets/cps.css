@@ -440,7 +440,7 @@ body.page::before{
 /* ═══════════ LIGHTBOX ═══════════ */
 .lightbox{
   position:fixed; inset:0; z-index:200; display:none; place-items:center;
-  padding:26px; cursor:zoom-out;
+  padding:26px; cursor:default;
   background:rgba(255,255,255,.965);
   backdrop-filter:blur(7px); -webkit-backdrop-filter:blur(7px);
 }
