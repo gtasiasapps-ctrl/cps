@@ -117,7 +117,7 @@ const PROJECTS = [
    en:{tag:'Detached house', type:'Residential', title:'Detached house', loc:'Averof, Larissa'}},
 
   {slug:'anakainisi-loutro', cat:'res', status:'done', year:'', dir:'projects/anakainisi-loutro', cover:'cover.jpg',
-   images:['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg'],
+   images:['01.jpg','02.jpg','03.jpg'],
    el:{tag:'Ανακαίνιση', type:'Κατοικία', title:'Ανακαίνιση λουτρού', loc:'Λάρισα'},
    en:{tag:'Refurbishment', type:'Residential', title:'Bathroom refurbishment', loc:'Larissa'}},
 
