@@ -239,15 +239,13 @@ let carouselGo = null, carouselRestart = null;
     alts();
     if (hasLogo && i > 0) from = 1;             // από 'δω και πέρα όχι ξανά λογότυπο
   }
-  // Διάρκεια slide: οι φωτογραφίες 1,5s · το λογότυπο λίγο παραπάνω (branding)
-  const DUR = 1500;        // φωτογραφίες
-  const DUR_LOGO = 1800;   // λογότυπο
-  const durFor = i => (SLIDES[i] && SLIDES[i].logo) ? DUR_LOGO : DUR;
+  // Διάρκεια slide: 2,5s (ομοιόμορφος ρυθμός για όλα τα slides)
+  const DUR = 2500;
   function tickNext(){
     timer = setTimeout(()=>{
       if (!paused && !document.hidden) go(cur + 1);
       tickNext();
-    }, durFor(cur));
+    }, DUR);
   }
   function start(){ if (timer) return; tickNext(); }
   function stop(){ clearTimeout(timer); timer = null; }
@@ -255,9 +253,18 @@ let carouselGo = null, carouselRestart = null;
   carouselRestart = ()=>{ stop(); start(); };
 
   const car = document.getElementById('carousel');
-  car.addEventListener('mouseenter', ()=> paused = true);
-  car.addEventListener('mouseleave', ()=> paused = false);
-  document.addEventListener('visibilitychange', ()=> { paused = document.hidden; });
+  // Pause στο hover ΜΟΝΟ σε συσκευές με ποντίκι: στο touch το `mouseenter`
+  // άναβε το pause χωρίς να σβήσει ποτέ (δεν έρχεται `mouseleave`) → «κολλούσε».
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (canHover){
+    car.addEventListener('mouseenter', ()=> paused = true);
+    car.addEventListener('mouseleave', ()=> paused = false);
+  }
+  // Επιστροφή από άλλη καρτέλα/app → ΠΑΝΤΑ ξεκινάει από την αρχή (πριν έμενε paused)
+  const resume = ()=>{ paused = false; carouselRestart(); };
+  document.addEventListener('visibilitychange', ()=>{ if (document.hidden) paused = true; else resume(); });
+  window.addEventListener('pageshow', resume);   // iOS/bfcache (back-forward)
+  window.addEventListener('focus', ()=>{ paused = false; });
 
   let sx = null;
   car.addEventListener('pointerdown', e => sx = e.clientX);
