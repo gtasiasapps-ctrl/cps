@@ -11,18 +11,30 @@ Site για την **C.P.S – Complete Project Solutions** (Λάρισα, απ�
 ούτε στα γράμματα, ούτε στις εικόνες. Παλέτα στο `:root`: `--bg:#fff`, `--ink:#0a0a0a`,
 `--muted:#6f6f6f` (ουδέτερο γκρι), `--line` (μαύρα borders με διαφάνεια).
 
+## Έργα & Επερχόμενα (ενημέρωση 2026-10-14)
+
+- **`PROJECTS`** = ολοκληρωμένα έργα (`projects.html`). **`UPCOMING`** = επερχόμενα (`upcoming.html`)·
+  το νεότερο ΠΡΩΤΟ στον πίνακα → «στοιβάζονται» με αυτή τη σειρά.
+- Κάθε έργο έχει `el/en.type` = τύπος ακινήτου (sub-label στην κάρτα).
+- Επερχόμενο με `video:'video.mp4'` → παίζει σε μεγάλο player 16:9 πάνω από την περιγραφή
+  (`projects/<slug>/video.mp4`). Χωρίς `video` → απλώς παραλείπεται ο player.
+- Νέες φωτογραφίες: `python3 tools/prep-images.py` (βελτιστοποίηση από τον φάκελο «cps yliko»).
+- Οι παλιοί demo φάκελοι (`house-pool` κ.λπ.) παραμένουν στο repo αλλά δεν χρησιμοποιούνται πια.
+
 ## Δομή
 
 ```
 cps/
-├── index.html              ← ΑΡΧΙΚΗ: μόνο hero + επερχόμενα έργα
-├── services.html           ← Υπηρεσίες (+ CTA)
+├── index.html              ← ΑΡΧΙΚΗ: hero + Επερχόμενα Έργα
+├── services.html           ← Υπηρεσίες (+ FAQ + CTA)
+├── projects.html           ← Έργα (grid, χωρίς φίλτρα)
+├── upcoming.html           ← Επερχόμενα Έργα (τίτλος → βίντεο 16:9 → περιγραφή → gallery)
 ├── contact.html            ← Επικοινωνία (στοιχεία + φόρμα)
 ├── project.html            ← σελίδα έργου  →  project.html?p=<slug>
 ├── carousel/               ← ⭐ φωτογραφίες του hero carousel (01.jpg, 02.jpg …)
 ├── projects/               ← ⭐ ΕΝΑΣ ΦΑΚΕΛΟΣ ΑΝΑ ΕΡΓΟ
-│   ├── house-pool/{cover,01,02}.jpg
-│   └── … (12 φάκελοι)
+│   ├── cafe-detox/{cover,01,02…}.jpg
+│   └── … (6 ολοκληρωμένα + onera στα επερχόμενα)
 ├── assets/
 │   ├── cps.css             όλα τα styles (όλων των σελίδων)
 │   ├── cps-data.js         I18N (EL/EN) + PROJECTS + CAROUSEL   ← εδώ δηλώνεις

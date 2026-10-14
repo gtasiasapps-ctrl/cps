@@ -61,9 +61,10 @@ const SITE_URL = 'https://cps-solutions.gr';
 const pageFile = () => (location.pathname.split('/').pop() || 'index.html');
 const isProjectPage = () => pageFile().indexOf('project.html') === 0;
 function currentSlug(){
-  if (!isProjectPage() || typeof PROJECTS === 'undefined' || !PROJECTS.length) return null;
+  const ALL = (typeof ALL_PROJECTS !== 'undefined') ? ALL_PROJECTS : PROJECTS;
+  if (!isProjectPage() || !ALL.length) return null;
   const s = new URLSearchParams(location.search).get('p');
-  return PROJECTS.some(p => p.slug === s) ? s : PROJECTS[0].slug;
+  return ALL.some(p => p.slug === s) ? s : ALL[0].slug;
 }
 function pageUrl(slug){
   const f = pageFile();
@@ -289,33 +290,74 @@ let renderProjects = function(){};
     }));
   }
 
-  const grid  = document.getElementById('projects-grid');
-  const wlist = document.getElementById('works-list');
-  renderProjects = function(){
-    if (grid) grid.innerHTML = PROJECTS.map(p=>`
-      <a class="proj reveal in" href="project.html?p=${p.slug}" data-cat="${p.cat}">
+  const grid   = document.getElementById('projects-grid');   // projects.html
+  const upGrid = document.getElementById('upcoming-grid');     // index.html (teaser)
+  const upList = document.getElementById('upcoming-list');     // upcoming.html (full)
+
+  // κάρτα έργου (Projects + teaser Επερχόμενων) — με sub-label τύπου ακινήτου
+  const cardHTML = (p, href) => `
+      <a class="proj reveal in" href="${href || ('project.html?p=' + p.slug)}" data-cat="${p.cat}">
         <div class="thumb"><img src="${coverOf(p)}" alt="${p[LANG].title}" loading="lazy" /></div>
         <div class="cap">
           <span class="tag">${p[LANG].tag}</span>
           <h3>${p[LANG].title}</h3>
+          <span class="type">${p[LANG].type || ''}</span>
           <span class="loc">${p[LANG].loc}</span>
         </div>
-      </a>`).join('');
-    if (wlist) wlist.innerHTML = PROJECTS.map(p=>`
-      <a href="project.html?p=${p.slug}"><span>${p[LANG].title}</span><span>${p[LANG].loc}</span></a>`).join('');
+      </a>`;
+
+  // πλήρης ενότητα επερχόμενου έργου (upcoming.html):
+  // Τίτλος → μεγάλο βίντεο 16:9 → περιγραφή → gallery
+  const featureHTML = p => {
+    const L = p[LANG];
+    const cap = L.title + ' — ' + L.loc;
+    const body = L.body || t('pd.body').replace('{tag}', L.tag).replace('{loc}', L.loc);
+    const video = p.video ? `
+      <div class="wrap">
+        <p class="up-label">${t('up.watch')}</p>
+        <figure class="up-video">
+          <video controls playsinline preload="metadata" poster="${coverOf(p)}">
+            <source src="${p.dir}/${p.video}" type="video/mp4" />
+          </video>
+        </figure>
+      </div>` : '';
+    const rest = photosOf(p);
+    const gallery = rest.length ? `
+      <div class="wrap">
+        <p class="up-label">${t('up.gallery')}</p>
+        <div class="pgallery up-gallery">${rest.map(f => `<figure><img src="${f}" alt="${cap}" loading="lazy" /></figure>`).join('')}</div>
+      </div>` : '';
+    return `
+      <article class="up-item" id="p-${p.slug}">
+        <div class="wrap up-head">
+          <p class="eyebrow">${L.tag}</p>
+          <h2>${L.title}</h2>
+          <p class="ploc">${L.loc} · ${(L.type || '')}</p>
+        </div>
+        ${video}
+        <div class="wrap">
+          <div class="up-body">${body}</div>
+        </div>
+        ${gallery}
+      </article>`;
+  };
+
+  renderProjects = function(){
+    if (grid)   grid.innerHTML   = PROJECTS.map(cardHTML).join('');
+    if (upGrid) upGrid.innerHTML = UPCOMING.map(p => cardHTML(p, 'upcoming.html#p-' + p.slug)).join('');
+    if (upList){
+      upList.innerHTML = UPCOMING.map(featureHTML).join('');
+      // μεγέθυνση φωτογραφιών κάθε επερχόμενου έργου
+      UPCOMING.forEach(p => {
+        const art = document.getElementById('p-' + p.slug);
+        if (!art) return;
+        const cap = p[LANG].title + ' — ' + p[LANG].loc;
+        const items = photosOf(p).map(src => ({ src, alt: cap, cap }));
+        art.querySelectorAll('.up-gallery img').forEach((im, k) => { im.onclick = () => window.openLightbox(items, k); });
+      });
+    }
   };
   renderProjects();
-
-  const filters = document.getElementById('filters');
-  if (filters && grid) filters.addEventListener('click', (e)=>{
-    const chip = e.target.closest('.chip'); if(!chip) return;
-    document.querySelectorAll('#filters .chip').forEach(c=>c.classList.remove('active'));
-    chip.classList.add('active');
-    const cat = chip.dataset.cat;
-    grid.querySelectorAll('.proj').forEach(el=>{
-      el.style.display = (cat === 'all' || el.dataset.cat === cat) ? '' : 'none';
-    });
-  });
 
   document.querySelectorAll('.lang button').forEach(b=>{
     b.addEventListener('click', ()=> setLang(b.dataset.lang));
@@ -375,18 +417,19 @@ let renderProject = null;
   const root = document.getElementById('pdetail');
   if (!root) return;
 
+  const ALL = (typeof ALL_PROJECTS !== 'undefined') ? ALL_PROJECTS : PROJECTS;
   const idxOf = () => {
     const slug = new URLSearchParams(location.search).get('p');
-    const i = PROJECTS.findIndex(p => p.slug === slug);
+    const i = ALL.findIndex(p => p.slug === slug);
     return i < 0 ? 0 : i;
   };
 
   renderProject = function(){
     const i = idxOf();
-    const p = PROJECTS[i];
+    const p = ALL[i];
     const L = p[LANG];
-    const prev = PROJECTS[(i - 1 + PROJECTS.length) % PROJECTS.length];
-    const next = PROJECTS[(i + 1) % PROJECTS.length];
+    const prev = ALL[(i - 1 + ALL.length) % ALL.length];
+    const next = ALL[(i + 1) % ALL.length];
 
     document.title = `${L.title} — ${L.loc} | CPS Solutions`;
 
@@ -428,21 +471,23 @@ let renderProject = null;
         '@context': 'https://schema.org', '@type': 'BreadcrumbList', 'inLanguage': LANG,
         'itemListElement': [
           { '@type': 'ListItem', 'position': 1, 'name': t('nav.home'), 'item': SITE_URL + '/' },
-          { '@type': 'ListItem', 'position': 2, 'name': t('nav.projects'), 'item': SITE_URL + '/#projects' },
+          { '@type': 'ListItem', 'position': 2, 'name': t('nav.projects'), 'item': SITE_URL + '/projects.html' },
           { '@type': 'ListItem', 'position': 3, 'name': L.title, 'item': canon }
         ]
       }, null, 2);
     })();
 
     const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-    set('pTag', L.tag);
+    set('pTag', L.tag + (L.type ? ' · ' + L.type : ''));
     set('pTitle', L.title);
     set('pLoc', L.loc);
-    set('pBody', t('pd.body').replace('{tag}', L.tag).replace('{loc}', L.loc));
+    set('pBody', L.body || t('pd.body').replace('{tag}', L.tag).replace('{loc}', L.loc));
     set('pCat', L.tag);
     set('pLoc2', L.loc);
     set('pStatus', t('st.' + p.status));
-    set('pYear', p.year);
+    set('pYear', p.year || '—');
+    const rowYear = document.getElementById('pYear') ? document.getElementById('pYear').closest('div') : null;
+    if (rowYear) rowYear.style.display = p.year ? '' : 'none';
     set('pNote', t('pd.note'));
 
     const cap = L.title + ' — ' + L.loc;
