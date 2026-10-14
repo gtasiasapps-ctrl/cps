@@ -239,13 +239,15 @@ let carouselGo = null, carouselRestart = null;
     alts();
     if (hasLogo && i > 0) from = 1;             // από 'δω και πέρα όχι ξανά λογότυπο
   }
-  // Διάρκεια slide: ΙΔΙΑ για όλα (logo + φωτογραφίες) → ομοιόμορφος ρυθμός
-  const DUR = 1800;
+  // Διάρκεια slide: οι φωτογραφίες 1,5s · το λογότυπο λίγο παραπάνω (branding)
+  const DUR = 1500;        // φωτογραφίες
+  const DUR_LOGO = 1800;   // λογότυπο
+  const durFor = i => (SLIDES[i] && SLIDES[i].logo) ? DUR_LOGO : DUR;
   function tickNext(){
     timer = setTimeout(()=>{
       if (!paused && !document.hidden) go(cur + 1);
       tickNext();
-    }, DUR);
+    }, durFor(cur));
   }
   function start(){ if (timer) return; tickNext(); }
   function stop(){ clearTimeout(timer); timer = null; }
