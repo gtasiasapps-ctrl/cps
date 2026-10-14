@@ -253,14 +253,8 @@ let carouselGo = null, carouselRestart = null;
   carouselRestart = ()=>{ stop(); start(); };
 
   const car = document.getElementById('carousel');
-  // Pause στο hover ΜΟΝΟ σε συσκευές με ποντίκι: στο touch το `mouseenter`
-  // άναβε το pause χωρίς να σβήσει ποτέ (δεν έρχεται `mouseleave`) → «κολλούσε».
-  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  if (canHover){
-    car.addEventListener('mouseenter', ()=> paused = true);
-    car.addEventListener('mouseleave', ()=> paused = false);
-  }
-  // Επιστροφή από άλλη καρτέλα/app → ΠΑΝΤΑ ξεκινάει από την αρχή (πριν έμενε paused)
+  // Χωρίς hover-pause (το ζήτησε ο Γιώργος): το carousel ΔΕΝ σταματά στο ποντίκι.
+  // Επιστροφή από άλλη καρτέλα/app → ΠΑΝΤΑ ξεκινάει (πριν έμενε paused)
   const resume = ()=>{ paused = false; carouselRestart(); };
   document.addEventListener('visibilitychange', ()=>{ if (document.hidden) paused = true; else resume(); });
   window.addEventListener('pageshow', resume);   // iOS/bfcache (back-forward)
