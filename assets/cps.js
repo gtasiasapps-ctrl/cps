@@ -320,11 +320,11 @@ let renderProjects = function(){};
   };
 
   // πλήρης ενότητα επερχόμενου έργου (upcoming.html):
-  // Τίτλος → μεγάλο βίντεο 16:9 → περιγραφή → gallery
+  // Τίτλος → βίντεο 16:9 → (προαιρ. περιγραφή) → κουτάκια → gallery
   const featureHTML = p => {
     const L = p[LANG];
     const cap = L.title + ' — ' + L.loc;
-    const body = L.body || t('pd.body').replace('{tag}', L.tag).replace('{loc}', L.loc);
+    const body = (L.body === '') ? '' : (L.body || t('pd.body').replace('{tag}', L.tag).replace('{loc}', L.loc));
     const video = p.video ? `
       <div class="wrap">
         <figure class="up-video">
@@ -356,9 +356,7 @@ let renderProjects = function(){};
           <p class="ploc">${L.loc} · ${(L.type || '')}</p>
         </div>
         ${video}
-        <div class="wrap">
-          <div class="up-body">${body}</div>
-        </div>
+        ${body ? `<div class="wrap"><div class="up-body">${body}</div></div>` : ''}
         ${facts}
         ${gallery}
       </article>`;

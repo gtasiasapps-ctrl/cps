@@ -143,7 +143,7 @@ const UPCOMING = [
    images:['onera-back-night.jpg','onera-side-back-night.jpg','01.jpg','02.jpg','03.jpg','04.jpg','05.jpg','06.jpg','07.jpg','08.jpg','09.jpg','10.jpg'],
    video:'video.mp4',
    el:{tag:'Συγκρότημα διαμερισμάτων', type:'Κατοικία', title:'ONERA', loc:'Αβέρωφ, Λάρισα',
-       body:'Το <b>ONERA</b> είναι ένα συγκρότημα διαμερισμάτων στον Αβέρωφ Λάρισας, σε φάση μελέτης και 3D απεικόνισης.',
+       body:'',
        cards:[
          {ico:'light', t:'Φως & γεωμετρία', d:'Τα διαμερίσματα οργανώνονται γύρω από τον φυσικό φωτισμό και τις καθαρές γεωμετρίες, ώστε κάθε χώρος να έχει άμεσο φως και οπτική άνεση.'},
          {ico:'materials', t:'Υλικά & χώροι', d:'Σύγχρονα υλικά και ενιαίοι χώροι καθιστικού–κουζίνας, με ήρεμες επιφάνειες και συνέχεια στα δάπεδα.'},
@@ -151,7 +151,7 @@ const UPCOMING = [
          {ico:'docs', t:'Μελέτες', d:'Αρχιτεκτονική σύνθεση, στατική και ενεργειακή μελέτη, καθώς και διαμόρφωση των εσωτερικών χώρων — από τη σύλληψη έως την άδεια.'}
        ]},
    en:{tag:'Apartment complex', type:'Residential', title:'ONERA', loc:'Averof, Larissa',
-       body:'<b>ONERA</b> is an apartment complex in Averof, Larissa, currently at the design and 3D visualisation stage.',
+       body:'',
        cards:[
          {ico:'light', t:'Light & geometry', d:'The apartments are organised around natural light and clean geometry, so every space gets direct daylight and visual comfort.'},
          {ico:'materials', t:'Materials & spaces', d:'Contemporary materials and open living–kitchen areas, with calm surfaces and continuous flooring.'},
