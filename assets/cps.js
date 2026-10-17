@@ -320,7 +320,7 @@ let renderProjects = function(){};
     const video = p.video ? `
       <div class="wrap">
         <figure class="up-video">
-          <video controls playsinline preload="metadata" poster="${coverOf(p)}">
+          <video controls playsinline preload="none" poster="${coverOf(p)}">
             <source src="${p.dir}/${p.video}" type="video/mp4" />
           </video>
         </figure>
