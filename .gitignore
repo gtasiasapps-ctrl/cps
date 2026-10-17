@@ -11,3 +11,10 @@ form/
 
 # raw υλικό (πηγές) — δεν ανεβαίνει
 cps yliko/
+
+# ONERA raw υλικό (πηγές) — ανεβαίνουν μόνο τα optimized αρχεία
+ONERA presentation_Clip 3_1.mp4
+projects/onera/*_ONERA.png
+projects/onera/3_SIDE BACK_NIGHT.png
+projects/onera/Scene 0*.png
+projects/onera/Scene 01_ FRONT_NIGHT.jpg
