@@ -311,6 +311,14 @@ let renderProjects = function(){};
         </div>
       </a>`;
 
+  // εικονίδια για τις «κάρτες» της περιγραφής επερχόμενου έργου
+  const FACTS_ICONS = {
+    light: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>',
+    materials: '<path d="M3 9h18M3 15h18M9 3v18M15 3v18"/>',
+    plan: '<path d="M4 4h16v16H4z"/><path d="M4 10h7v10M11 10h9"/>',
+    docs: '<path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h6M9 16h6"/>'
+  };
+
   // πλήρης ενότητα επερχόμενου έργου (upcoming.html):
   // Τίτλος → μεγάλο βίντεο 16:9 → περιγραφή → gallery
   const featureHTML = p => {
@@ -324,6 +332,16 @@ let renderProjects = function(){};
             <source src="${p.dir}/${p.video}" type="video/mp4" />
           </video>
         </figure>
+      </div>` : '';
+    const facts = (L.cards && L.cards.length) ? `
+      <div class="wrap">
+        <div class="cards facts">${L.cards.map(c => `
+          <article class="card reveal in">
+            <div class="ico"><svg viewBox="0 0 24 24">${FACTS_ICONS[c.ico] || FACTS_ICONS.docs}</svg></div>
+            <h3>${c.t}</h3>
+            <p class="muted" style="font-size:14.6px">${c.d}</p>
+          </article>`).join('')}
+        </div>
       </div>` : '';
     const rest = photosOf(p);
     const gallery = rest.length ? `
@@ -341,6 +359,7 @@ let renderProjects = function(){};
         <div class="wrap">
           <div class="up-body">${body}</div>
         </div>
+        ${facts}
         ${gallery}
       </article>`;
   };

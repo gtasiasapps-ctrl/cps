@@ -20,10 +20,10 @@ const I18N = {
     "co.f3":"Σύγχρονη αντίληψη των κατασκευαστικών δεδομένων","co.f4":"Ποιότητα κατασκευής",
     "co.f5":"Συλλογική εργασία","co.f6":"Ορθολογική οικονομική διαχείριση",
     "sv.img":"Έργο της CPS Solutions στη Λάρισα",
-    "sv.t1":"Architecture","sv.d1":"Αρχιτεκτονική σύνθεση και μελέτη — από το concept στην οριστική μελέτη και την οικοδομική άδεια.","sv.b11":"Concept &amp; προμελέτη","sv.b12":"Οριστική αρχιτεκτονική μελέτη","sv.b13":"Φωτορεαλιστικές 3D απεικονίσεις","sv.b14":"Έκδοση οικοδομικής άδειας",
-    "sv.t2":"Engineering","sv.d2":"Στατικές, ενεργειακές και ηλεκτρομηχανολογικές μελέτες με τεχνική αρτιότητα.","sv.b21":"Στατική μελέτη &amp; αντισεισμικός έλεγχος","sv.b22":"Ενεργειακή μελέτη (ΚΕΝΑΚ)","sv.b23":"Η/Μ μελέτες","sv.b24":"Επίβλεψη κατασκευής",
-    "sv.t3":"Interior Design","sv.d3":"Σχεδιασμός εσωτερικών χώρων με ταυτότητα, λειτουργικότητα και αίσθηση.","sv.b31":"Concept &amp; διάταξη χώρων","sv.b32":"Υλικά &amp; φωτισμός","sv.b33":"3D απεικονίσεις","sv.b34":"Επίπλωση &amp; επίβλεψη",
-    "sv.t4":"Project Management","sv.d4":"Συντονισμός και έλεγχος του έργου: χρόνος, κόστος, ποιότητα, ασφάλεια.","sv.b41":"Χρονοδιάγραμμα &amp; προϋπολογισμός","sv.b42":"Διαχείριση συνεργείων","sv.b43":"Έλεγχος ποιότητας","sv.b44":"Παράδοση έργου",
+    "sv.t1":"Architecture","sv.d1":"Αρχιτεκτονική σύνθεση και μελέτη — από το concept στην οριστική μελέτη και την οικοδομική άδεια.","sv.b11":"Concept & προμελέτη","sv.b12":"Οριστική αρχιτεκτονική μελέτη","sv.b13":"Φωτορεαλιστικές 3D απεικονίσεις","sv.b14":"Έκδοση οικοδομικής άδειας",
+    "sv.t2":"Engineering","sv.d2":"Στατικές, ενεργειακές και ηλεκτρομηχανολογικές μελέτες με τεχνική αρτιότητα.","sv.b21":"Στατική μελέτη & αντισεισμικός έλεγχος","sv.b22":"Ενεργειακή μελέτη (ΚΕΝΑΚ)","sv.b23":"Η/Μ μελέτες","sv.b24":"Επίβλεψη κατασκευής",
+    "sv.t3":"Interior Design","sv.d3":"Σχεδιασμός εσωτερικών χώρων με ταυτότητα, λειτουργικότητα και αίσθηση.","sv.b31":"Concept & διάταξη χώρων","sv.b32":"Υλικά & φωτισμός","sv.b33":"3D απεικονίσεις","sv.b34":"Επίπλωση & επίβλεψη",
+    "sv.t4":"Project Management","sv.d4":"Συντονισμός και έλεγχος του έργου: χρόνος, κόστος, ποιότητα, ασφάλεια.","sv.b41":"Χρονοδιάγραμμα & προϋπολογισμός","sv.b42":"Διαχείριση συνεργείων","sv.b43":"Έλεγχος ποιότητας","sv.b44":"Παράδοση έργου",
     "sv.t5":"Real Estate Development","sv.t5b":"(BREEAM Accredited)","sv.d5":"Ανάπτυξη ακινήτων από το μηδέν, με βιώσιμη κατασκευή και πιστοποίηση BREEAM.","sv.b51":"Ανάλυση σκοπιμότητας","sv.b52":"Χρηματοοικονομική εκτίμηση","sv.b53":"Βιώσιμη κατασκευή (BREEAM)","sv.b54":"Διαχείριση ακινήτου",
     "sv.eyebrow":"Υπηρεσίες","sv.h2":"Ολοκληρωμένες λύσεις για κάθε χώρο",
     "pr.eyebrow":"Έργα","pr.h2":"Τα έργα μας","pr.note":"Επιλεγμένα έργα που έχουμε αναλάβει — από τη μελέτη και την αδειοδότηση έως την κατασκευή και την παράδοση.",
@@ -65,10 +65,10 @@ const I18N = {
     "co.f3":"A contemporary understanding of construction data","co.f4":"Construction quality",
     "co.f5":"Teamwork","co.f6":"Rational cost management",
     "sv.img":"A CPS Solutions project in Larissa",
-    "sv.t1":"Architecture","sv.d1":"Architectural design and studies — from concept to final design and building permit.","sv.b11":"Concept &amp; preliminary design","sv.b12":"Final architectural design","sv.b13":"Photorealistic 3D visuals","sv.b14":"Building permit issuance",
-    "sv.t2":"Engineering","sv.d2":"Structural, energy and MEP studies with technical excellence.","sv.b21":"Structural design &amp; seismic checks","sv.b22":"Energy study (KENAK)","sv.b23":"MEP engineering","sv.b24":"Construction supervision",
-    "sv.t3":"Interior Design","sv.d3":"Interior spaces with identity, functionality and feel.","sv.b31":"Concept &amp; space planning","sv.b32":"Materials &amp; lighting","sv.b33":"3D visuals","sv.b34":"Furnishing &amp; supervision",
-    "sv.t4":"Project Management","sv.d4":"Coordination and control of the project: time, cost, quality and safety.","sv.b41":"Schedule &amp; budget","sv.b42":"Contractor management","sv.b43":"Quality control","sv.b44":"Project delivery",
+    "sv.t1":"Architecture","sv.d1":"Architectural design and studies — from concept to final design and building permit.","sv.b11":"Concept & preliminary design","sv.b12":"Final architectural design","sv.b13":"Photorealistic 3D visuals","sv.b14":"Building permit issuance",
+    "sv.t2":"Engineering","sv.d2":"Structural, energy and MEP studies with technical excellence.","sv.b21":"Structural design & seismic checks","sv.b22":"Energy study (KENAK)","sv.b23":"MEP engineering","sv.b24":"Construction supervision",
+    "sv.t3":"Interior Design","sv.d3":"Interior spaces with identity, functionality and feel.","sv.b31":"Concept & space planning","sv.b32":"Materials & lighting","sv.b33":"3D visuals","sv.b34":"Furnishing & supervision",
+    "sv.t4":"Project Management","sv.d4":"Coordination and control of the project: time, cost, quality and safety.","sv.b41":"Schedule & budget","sv.b42":"Contractor management","sv.b43":"Quality control","sv.b44":"Project delivery",
     "sv.t5":"Real Estate Development","sv.t5b":"(BREEAM Accredited)","sv.d5":"Real estate development from the ground up, with sustainable construction and BREEAM certification.","sv.b51":"Feasibility analysis","sv.b52":"Financial appraisal","sv.b53":"Sustainable construction (BREEAM)","sv.b54":"Property management",
     "sv.eyebrow":"Services","sv.h2":"Complete solutions for every space",
     "pr.eyebrow":"Projects","pr.h2":"Our projects","pr.note":"Selected projects we have delivered — from design and permitting through to construction and handover.",
@@ -143,9 +143,21 @@ const UPCOMING = [
    images:['onera-back-night.jpg','onera-side-back-night.jpg','01.jpg','02.jpg','03.jpg','04.jpg','05.jpg','06.jpg','07.jpg','08.jpg','09.jpg','10.jpg'],
    video:'video.mp4',
    el:{tag:'Συγκρότημα διαμερισμάτων', type:'Κατοικία', title:'ONERA', loc:'Αβέρωφ, Λάρισα',
-       body:'Το <b>ONERA</b> είναι ένα συγκρότημα διαμερισμάτων στον Αβέρωφ Λάρισας, σε φάση μελέτης και 3D απεικόνισης. Ο σχεδιασμός οργανώνει τα διαμερίσματα γύρω από τον φυσικό φωτισμό και τις καθαρές γεωμετρίες, με σύγχρονα υλικά, ενιαίους χώρους καθιστικού και κουζίνας, και λιτές, λειτουργικές κατόψεις. Η μελέτη καλύπτει την αρχιτεκτονική σύνθεση, τη στατική και ενεργειακή μελέτη, καθώς και τη διαμόρφωση των εσωτερικών χώρων.'},
+       body:'Το <b>ONERA</b> είναι ένα συγκρότημα διαμερισμάτων στον Αβέρωφ Λάρισας, σε φάση μελέτης και 3D απεικόνισης.',
+       cards:[
+         {ico:'light', t:'Φως & γεωμετρία', d:'Τα διαμερίσματα οργανώνονται γύρω από τον φυσικό φωτισμό και τις καθαρές γεωμετρίες, ώστε κάθε χώρος να έχει άμεσο φως και οπτική άνεση.'},
+         {ico:'materials', t:'Υλικά & χώροι', d:'Σύγχρονα υλικά και ενιαίοι χώροι καθιστικού–κουζίνας, με ήρεμες επιφάνειες και συνέχεια στα δάπεδα.'},
+         {ico:'plan', t:'Κατόψεις', d:'Λιτές, λειτουργικές κατόψεις χωρίς περιττούς διαδρόμους, με σωστή αναλογία φωτισμού και αποθήκευσης σε κάθε διαμέρισμα.'},
+         {ico:'docs', t:'Μελέτες', d:'Αρχιτεκτονική σύνθεση, στατική και ενεργειακή μελέτη, καθώς και διαμόρφωση των εσωτερικών χώρων — από τη σύλληψη έως την άδεια.'}
+       ]},
    en:{tag:'Apartment complex', type:'Residential', title:'ONERA', loc:'Averof, Larissa',
-       body:'<b>ONERA</b> is an apartment complex in Averof, Larissa, currently at the design and 3D visualisation stage. The layout is organised around natural light and clean geometry, with contemporary materials, open living and kitchen areas, and efficient, uncluttered floor plans. The study covers architectural design, structural and energy studies, as well as the interior layout.'}}
+       body:'<b>ONERA</b> is an apartment complex in Averof, Larissa, currently at the design and 3D visualisation stage.',
+       cards:[
+         {ico:'light', t:'Light & geometry', d:'The apartments are organised around natural light and clean geometry, so every space gets direct daylight and visual comfort.'},
+         {ico:'materials', t:'Materials & spaces', d:'Contemporary materials and open living–kitchen areas, with calm surfaces and continuous flooring.'},
+         {ico:'plan', t:'Floor plans', d:'Efficient, uncluttered layouts without wasted corridors, with the right balance of light and storage in every apartment.'},
+         {ico:'docs', t:'Studies', d:'Architectural design, structural and energy studies, and interior layout — from concept to building permit.'}
+       ]}}
 ];
 
 /* Όλα τα έργα μαζί (για τη σελίδα έργου & το «επόμενο/προηγούμενο») */
