@@ -126,8 +126,8 @@ const PROJECTS = [
    el:{tag:'Ανακαίνιση', type:'Κατοικία', title:'Ανακαίνιση σοφίτας', loc:'Λάρισα'},
    en:{tag:'Refurbishment', type:'Residential', title:'Loft refurbishment', loc:'Larissa'}},
 
-  {slug:'kdap-mazi-mou', cat:'com', status:'done', year:'', dir:'projects/kdap-mazi-mou', cover:'cover.jpg',
-   images:['01.jpg','02.jpg','03.jpg','04.jpg'],
+  {slug:'kdap-mazi-mou', cat:'com', status:'done', year:'', dir:'projects/kdap-mazi-mou', cover:'kdap-main.jpg',
+   images:['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg'],
    el:{tag:'Καταστήματα & Γραφεία', type:'Επαγγελματικός χώρος', title:'ΚΔΑΠ «ΜΑΖΙ ΜΟΥ»', loc:'Γιαννούλη, Λάρισα'},
    en:{tag:'Retail & Offices', type:'Commercial', title:'KDAP "Mazi Mou"', loc:'Giannouli, Larissa'}}
 ];
