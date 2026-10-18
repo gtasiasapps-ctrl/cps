@@ -4,7 +4,7 @@
    ══════════════════════════════════════════════════════════ */
 const I18N = {
   el: {
-    "nav.home":"Αρχική","hm.h1":"CPS Solutions Λάρισα — Πολιτικός Μηχανικός: μελέτη, κατασκευή και διαχείριση έργων","nav.company":"Η Επιχείρηση","nav.services":"Υπηρεσίες","nav.projects":"Έργα",
+    "nav.home":"Αρχική","hm.h1":"CPS Solutions Λάρισα — Πολιτικός Μηχανικός: μελέτη, κατασκευή και διαχείριση έργων","nav.company":"Η Επιχείρηση","nav.services":"Υπηρεσίες","nav.projects":"Πρόσφατα Έργα",
     "nav.upcoming":"Επερχόμενα Έργα",
     "nav.back":"Πίσω","nav.contact":"Επικοινωνία","nav.cta":"Ζητήστε προσφορά","co.line":"Architecture – Engineering – Interior Design – Project Management – Real Estate Development (BREEAM Accredited)",
     "st.kicker":"Οι πελάτες μας περιμένουν","st.big":"Το άρτιο","st.sub":"Αυτό επιδιώκουμε σε κάθε έργο",
@@ -26,7 +26,7 @@ const I18N = {
     "sv.t4":"Project Management","sv.d4":"Συντονισμός και έλεγχος του έργου: χρόνος, κόστος, ποιότητα, ασφάλεια.","sv.b41":"Χρονοδιάγραμμα & προϋπολογισμός","sv.b42":"Διαχείριση συνεργείων","sv.b43":"Έλεγχος ποιότητας","sv.b44":"Παράδοση έργου",
     "sv.t5":"Real Estate Development","sv.t5b":"(BREEAM Accredited)","sv.d5":"Ανάπτυξη ακινήτων από το μηδέν, με βιώσιμη κατασκευή και πιστοποίηση BREEAM.","sv.b51":"Ανάλυση σκοπιμότητας","sv.b52":"Χρηματοοικονομική εκτίμηση","sv.b53":"Βιώσιμη κατασκευή (BREEAM)","sv.b54":"Διαχείριση ακινήτου",
     "sv.eyebrow":"Υπηρεσίες","sv.h2":"Ολοκληρωμένες λύσεις για κάθε χώρο",
-    "pr.eyebrow":"Έργα","pr.h2":"Τα έργα μας","pr.note":"Επιλεγμένα έργα που έχουμε αναλάβει — από τη μελέτη και την αδειοδότηση έως την κατασκευή και την παράδοση.",
+    "pr.eyebrow":"Πρόσφατα Έργα","pr.h2":"Τα έργα μας","pr.note":"Επιλεγμένα έργα που έχουμε αναλάβει — από τη μελέτη και την αδειοδότηση έως την κατασκευή και την παράδοση.",
     "up.eyebrow":"Επερχόμενα Έργα","up.h2":"Έργα υπό μελέτη","up.note":"Έργα που βρίσκονται σε φάση μελέτης ή ανάπτυξης. Παρουσιάζονται με 3D απεικονίσεις και, όπου υπάρχει, βίντεο παρουσίασης.","up.all":"Όλα τα επερχόμενα έργα","up.watch":"Βίντεο παρουσίασης","up.gallery":"Φωτογραφίες & 3D απεικονίσεις",
     "ct.eyebrow":"Επικοινωνία","ct.h2":"Ας μιλήσουμε για το επόμενο έργο σας",
     "ct.k1":"Διεύθυνση","ct.v1":"Κουμουνδούρου Αλέξανδρου 24, Άγιος Νικόλαος, 412 22 Λάρισα","ct.v1b":"","ct.v1b2":"",
@@ -49,7 +49,7 @@ const I18N = {
     "mail.subject":"Αίτημα από το site","mail.name":"Όνομα","mail.phone":"Τηλέφωνο","mail.email":"Email","mail.topic":"Ενδιαφέρον"
   },
   en: {
-    "nav.home":"Home","hm.h1":"CPS Solutions Larissa — Civil Engineer: design, construction and project management","nav.company":"The Company","nav.services":"Services","nav.projects":"Projects",
+    "nav.home":"Home","hm.h1":"CPS Solutions Larissa — Civil Engineer: design, construction and project management","nav.company":"The Company","nav.services":"Services","nav.projects":"Recent Projects",
     "nav.upcoming":"Upcoming Projects",
     "nav.back":"Back","nav.contact":"Contact","nav.cta":"Request a quote","co.line":"Architecture – Engineering – Interior Design – Project Management – Real Estate Development (BREEAM Accredited)",
     "st.kicker":"Our clients expect","st.big":"The flawless","st.sub":"It is what we strive for in every project",
@@ -71,7 +71,7 @@ const I18N = {
     "sv.t4":"Project Management","sv.d4":"Coordination and control of the project: time, cost, quality and safety.","sv.b41":"Schedule & budget","sv.b42":"Contractor management","sv.b43":"Quality control","sv.b44":"Project delivery",
     "sv.t5":"Real Estate Development","sv.t5b":"(BREEAM Accredited)","sv.d5":"Real estate development from the ground up, with sustainable construction and BREEAM certification.","sv.b51":"Feasibility analysis","sv.b52":"Financial appraisal","sv.b53":"Sustainable construction (BREEAM)","sv.b54":"Property management",
     "sv.eyebrow":"Services","sv.h2":"Complete solutions for every space",
-    "pr.eyebrow":"Projects","pr.h2":"Our projects","pr.note":"Selected projects we have delivered — from design and permitting through to construction and handover.",
+    "pr.eyebrow":"Recent Projects","pr.h2":"Our projects","pr.note":"Selected projects we have delivered — from design and permitting through to construction and handover.",
     "up.eyebrow":"Upcoming Projects","up.h2":"Projects in progress","up.note":"Projects currently in design or development, presented with 3D visuals and, where available, a presentation video.","up.all":"All upcoming projects","up.watch":"Presentation video","up.gallery":"Photos & 3D visuals",
     "ct.eyebrow":"Contact","ct.h2":"Let's talk about your next project",
     "ct.k1":"Address","ct.v1":"Koumoundourou Alexandrou 24, Agios Nikolaos, 412 22 Larissa","ct.v1b":"","ct.v1b2":"",
@@ -140,7 +140,7 @@ const PROJECTS = [
    ══════════════════════════════════════════════════════════ */
 const UPCOMING = [
   {slug:'onera', cat:'res', status:'des', year:'', dir:'projects/onera', cover:'onera-front-night.jpg',
-   images:['onera-back-night.jpg','onera-side-back-night.jpg','01.jpg','02.jpg','03.jpg','04.jpg','05.jpg','06.jpg','07.jpg','08.jpg','09.jpg','10.jpg'],
+   images:['cover.jpg','onera-back-night.jpg','onera-side-back-night.jpg','01.jpg','02.jpg','03.jpg','04.jpg','05.jpg','06.jpg','07.jpg','08.jpg','09.jpg','10.jpg'],
    video:'video.mp4',
    map:{lat:39.6086, lng:22.4340, zoom:17,
         addrEl:'Λέγγα Βασιλικής 39, Λάρισα', addrEn:'Legga Vasilikis 39, Larissa'},
@@ -184,6 +184,7 @@ const CAROUSEL = [
   'projects/kdap-mazi-mou/kdap-main.jpg',
   'projects/apartments-giannouli/cover.jpg',
   'projects/monokatoikia-averof/cover.jpg',
-  'projects/anakainisi-sofita/cover.jpg',
-  'projects/anakainisi-loutro/cover.jpg'
+  'projects/onera/04.jpg',
+  'projects/onera/cover.jpg',
+  'projects/onera/10.jpg'
 ];
