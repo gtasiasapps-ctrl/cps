@@ -186,5 +186,6 @@ const CAROUSEL = [
   'projects/monokatoikia-averof/cover.jpg',
   'projects/onera/04.jpg',
   'projects/onera/cover.jpg',
-  'projects/onera/10.jpg'
+  'projects/onera/10.jpg',
+  'projects/onera/01.jpg'
 ];
