@@ -608,7 +608,15 @@ body.page #upcoming-list{ padding-top:calc(var(--nav-h) + 52px) }
 .cards.facts .card h3{ font-size:15.6px; margin:0 0 8px; letter-spacing:.01em }
 .cards.facts .card p{ margin:0; line-height:1.62; color:#3a3a3a }
 .up-body p:last-child{ margin-bottom:0 }
-.up-item .pgallery{ margin-top:16px }
+.up-map{ max-width:980px; margin:0 auto 8px; border:1px solid var(--line); border-radius:16px; overflow:hidden; background:#fff }
+.up-map iframe{ display:block; width:100%; height:clamp(300px,42vw,420px); border:0; filter:grayscale(.18) }
+.up-map figcaption{ display:flex; align-items:center; flex-wrap:wrap; gap:10px; padding:14px 18px; font-size:13.6px; color:#3a3a3a; border-top:1px solid var(--line); letter-spacing:.01em }
+.up-map figcaption b{ letter-spacing:.08em }
+.map-dot{ width:9px; height:9px; border-radius:50%; background:currentColor; box-shadow:0 0 0 4px rgba(10,10,10,.08); flex:0 0 auto }
+.up-about{ max-width:760px; margin:44px auto 0; text-align:center }
+.up-about h3{ font-size:clamp(1.3rem,2.4vw,1.85rem); letter-spacing:-.015em; line-height:1.28; margin:0 0 16px }
+.up-about p{ font-size:clamp(1rem,1.5vw,1.08rem); line-height:1.75; color:var(--ink-2); margin:0 }
+.up-item .pgallery{ margin-top:44px }
 .up-gallery figure{ width:calc(33.333% - 7px); height:auto; aspect-ratio:4/3 }
 
 /* «Real Estate Development» + «(BREEAM Accredited)» σε δεύτερη γραμμή */

@@ -204,8 +204,12 @@ let carouselGo = null, carouselRestart = null;
   // Κάθε entry μπορεί να είναι: όνομα μέσα στο carousel/ (π.χ. '02.jpg')
   // Ή διαδρομή από τη ρίζα του site (π.χ. 'projects/onera/cover.jpg').
   const carSrc = f => (String(f).indexOf('/') >= 0 ? f : 'carousel/' + encodeURIComponent(f));
+  // για σωστό alt: βρες σε ποιο έργο ανήκει η εικόνα (cover)
+  const byCover = {};
+  (typeof PROJECTS !== 'undefined' ? PROJECTS : []).concat(typeof UPCOMING !== 'undefined' ? UPCOMING : [])
+    .forEach(p => { byCover[coverOf(p)] = p; });
   const REST = (typeof CAROUSEL !== 'undefined' && CAROUSEL.length)
-    ? CAROUSEL.filter(f => f !== CAROUSEL_LOGO).map(f => ({ src: carSrc(f), project: null }))
+    ? CAROUSEL.filter(f => f !== CAROUSEL_LOGO).map(f => { const src = carSrc(f); return { src, project: byCover[src] || null }; })
     : PROJECTS.map(p => ({ src: coverOf(p), project: p }));
   const SLIDES = (LOGO_SRC ? [{ src: LOGO_SRC, logo: true, project: null }] : []).concat(REST);
 
@@ -343,6 +347,24 @@ let renderProjects = function(){};
           </article>`).join('')}
         </div>
       </div>` : '';
+    // χάρτης Google Maps (προαιρετικό `map` στο έργο) — πινέζα με το όνομα του έργου
+    const map = p.map ? `
+      <div class="wrap">
+        <figure class="up-map">
+          <iframe title="${L.title} — ${L.loc}" loading="lazy" allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=${p.map.lat},${p.map.lng}(${encodeURIComponent(L.title)})&z=${p.map.zoom || 16}&hl=${LANG}&output=embed"></iframe>
+          <figcaption><span class="map-dot" aria-hidden="true"></span><b>${L.title}</b> · ${LANG === 'el' ? p.map.addrEl : p.map.addrEn}</figcaption>
+        </figure>
+      </div>` : '';
+    // εισαγωγικό/τοποθεσίας κείμενο (προαιρετικό `about`)
+    const about = L.about ? `
+      <div class="wrap">
+        <div class="up-about">
+          <h3>${L.about.t}</h3>
+          <p>${L.about.p}</p>
+        </div>
+      </div>` : '';
     const rest = photosOf(p);
     const gallery = rest.length ? `
       <div class="wrap">
@@ -358,6 +380,8 @@ let renderProjects = function(){};
         ${video}
         ${body ? `<div class="wrap"><div class="up-body">${body}</div></div>` : ''}
         ${facts}
+        ${map}
+        ${about}
         ${gallery}
       </article>`;
   };

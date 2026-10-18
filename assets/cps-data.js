@@ -128,8 +128,8 @@ const PROJECTS = [
 
   {slug:'kdap-mazi-mou', cat:'com', status:'done', year:'', dir:'projects/kdap-mazi-mou', cover:'kdap-main.jpg',
    images:['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg'],
-   el:{tag:'Καταστήματα & Γραφεία', type:'Επαγγελματικός χώρος', title:'ΚΔΑΠ «ΜΑΖΙ ΜΟΥ»', loc:'Γιαννούλη, Λάρισα'},
-   en:{tag:'Retail & Offices', type:'Commercial', title:'KDAP "Mazi Mou"', loc:'Giannouli, Larissa'}}
+   el:{tag:'Καταστήματα & Γραφεία', type:'Επαγγελματικός χώρος', title:'ΚΔΑΠ «ΜΑΖΙ ΣΟΥ»', loc:'Γιαννούλη, Λάρισα'},
+   en:{tag:'Retail & Offices', type:'Commercial', title:'KDAP "Mazi Sou"', loc:'Giannouli, Larissa'}}
 ];
 
 /* ══════════════════════════════════════════════════════════
@@ -142,8 +142,12 @@ const UPCOMING = [
   {slug:'onera', cat:'res', status:'des', year:'', dir:'projects/onera', cover:'onera-front-night.jpg',
    images:['onera-back-night.jpg','onera-side-back-night.jpg','01.jpg','02.jpg','03.jpg','04.jpg','05.jpg','06.jpg','07.jpg','08.jpg','09.jpg','10.jpg'],
    video:'video.mp4',
+   map:{lat:39.6086, lng:22.4340, zoom:17,
+        addrEl:'Λέγγα Βασιλικής 39, Λάρισα', addrEn:'Legga Vasilikis 39, Larissa'},
    el:{tag:'Συγκρότημα διαμερισμάτων', type:'Κατοικία', title:'ONERA', loc:'Αβέρωφ, Λάρισα',
        body:'',
+       about:{t:'Αισθητική που ξεχωρίζει. Ποιότητα που διαρκεί.',
+              p:'Το ONERA βρίσκεται στην περιοχή Αβέρωφ της Λάρισας, λίγα βήματα από την πλατεία της γειτονιάς. Η προνομιακή θέση του οικοπέδου προσφέρει άμεση πρόσβαση σε σχολεία, καταστήματα καθημερινών αναγκών και στάσεις λεωφορείων, με επιλογές άθλησης, εστίασης και αναψυχής σε κοντινή απόσταση. Παράλληλα, διαθέτει εύκολη σύνδεση με το Fashion City Outlet και την ιδιωτική κλινική ΙΑΣΩ Θεσσαλίας, συνδυάζοντας την καθημερινότητα της γειτονιάς με την πρόσβαση σε σημαντικές υπηρεσίες της πόλης.'},
        cards:[
          {ico:'light', t:'Φως & γεωμετρία', d:'Τα διαμερίσματα οργανώνονται γύρω από τον φυσικό φωτισμό και τις καθαρές γεωμετρίες, ώστε κάθε χώρος να έχει άμεσο φως και οπτική άνεση.'},
          {ico:'materials', t:'Υλικά & χώροι', d:'Σύγχρονα υλικά και ενιαίοι χώροι καθιστικού–κουζίνας, με ήρεμες επιφάνειες και συνέχεια στα δάπεδα.'},
@@ -152,6 +156,8 @@ const UPCOMING = [
        ]},
    en:{tag:'Apartment complex', type:'Residential', title:'ONERA', loc:'Averof, Larissa',
        body:'',
+       about:{t:'Distinctive aesthetics. Quality that lasts.',
+              p:'ONERA is located in the Averof area of Larissa, a few steps from the neighbourhood square. The plot\u2019s privileged position offers direct access to schools, everyday shops and bus stops, with sport, dining and leisure options close by. At the same time, it is easily connected to the Fashion City Outlet and the IASO Thessaly private clinic, combining neighbourhood living with access to key city services.'},
        cards:[
          {ico:'light', t:'Light & geometry', d:'The apartments are organised around natural light and clean geometry, so every space gets direct daylight and visual comfort.'},
          {ico:'materials', t:'Materials & spaces', d:'Contemporary materials and open living–kitchen areas, with calm surfaces and continuous flooring.'},
@@ -174,10 +180,10 @@ const ALL_PROJECTS = PROJECTS.concat(UPCOMING);
    ══════════════════════════════════════════════════════════ */
 const CAROUSEL_LOGO = 'logo-banner.jpg';
 const CAROUSEL = [
-  '01.jpg',
-  '02.jpg',
-  '03.jpg',
-  '04.jpg',
-  '05.jpg',
-  '06.jpg'
+  'projects/onera/onera-front-night.jpg',
+  'projects/kdap-mazi-mou/kdap-main.jpg',
+  'projects/apartments-giannouli/cover.jpg',
+  'projects/monokatoikia-averof/cover.jpg',
+  'projects/anakainisi-sofita/cover.jpg',
+  'projects/anakainisi-loutro/cover.jpg'
 ];
