@@ -354,7 +354,7 @@ let renderProjects = function(){};
           <iframe title="${L.title} — ${L.loc}" loading="lazy" allowfullscreen
             referrerpolicy="no-referrer-when-downgrade"
             src="https://maps.google.com/maps?q=${p.map.lat},${p.map.lng}(${encodeURIComponent(L.title)})&z=${p.map.zoom || 16}&hl=${LANG}&output=embed"></iframe>
-          <figcaption><span class="map-dot" aria-hidden="true"></span><b>${L.title}</b> · ${LANG === 'el' ? p.map.addrEl : p.map.addrEn}</figcaption>
+          <figcaption><span class="map-dot" aria-hidden="true"></span><b>${L.title}</b></figcaption>
         </figure>
       </div>` : '';
     // εισαγωγικό/τοποθεσίας κείμενο (προαιρετικό `about`)
